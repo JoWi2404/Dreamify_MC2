@@ -193,7 +193,9 @@ struct DetailView: View {
                 
                 Slider(value: $playbackProgress)
                     .accentColor(.green)
+                    .frame(width: UIScreen.main.bounds.width - 100) // Menyesuaikan panjang slider
                     .padding(.horizontal)
+
                 
                 HStack {
                     Spacer()
@@ -242,7 +244,9 @@ struct DetailView: View {
                 
                 Slider(value: $playbackProgress)
                     .accentColor(.green)
+                    .frame(width: UIScreen.main.bounds.width - 100) // Menyesuaikan panjang slider
                     .padding(.horizontal)
+
                 
                 Spacer()
             }

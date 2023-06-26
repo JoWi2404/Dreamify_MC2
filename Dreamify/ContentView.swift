@@ -185,10 +185,11 @@ struct CircleView: View {
     var body: some View {
         Circle()
             .frame(width: 10, height: 10)
-            .foregroundColor(selected ? .purple : .white)
+            .foregroundColor(selected ? Color(hex: 0xF7E5B6) : .white)
             .opacity(selected ? 1 : 0.4)
     }
 }
+
 
 struct OnboardingView1_Previews: PreviewProvider {
     static var previews: some View {
