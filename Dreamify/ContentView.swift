@@ -11,13 +11,12 @@ struct OnboardingView1: View {
                 
                 VStack {
                     Spacer()
-                    
                     Image("Bulan")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .padding()
                     
-                    Text("Welcome to Dreamify")
+                    Text("Welcome to Dreamify!")
                         .font(.title)
                         .foregroundColor(Color(hex: 0xF7E5B6))
                         .fontWeight(.bold)
@@ -31,17 +30,26 @@ struct OnboardingView1: View {
                     
                     Spacer()
                     
-                    NavigationLink(destination: OnboardingView2()) {
-                        Text("Next")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(LinearGradient(gradient: Gradient(colors: [Color.purple, Color.blue]), startPoint: .leading, endPoint: .trailing))
-                            .cornerRadius(10)
-                            .padding(.horizontal)
+                    VStack {
+                        HStack(spacing: 10) {
+                            CircleView(selected: true)
+                            CircleView(selected: false)
+                            CircleView(selected: false)
+                        }
+                        .padding(.bottom, 20)
+                        
+                        NavigationLink(destination: OnboardingView2()) {
+                            Text("Next")
+                                .font(.headline)
+                                .foregroundColor(.purple)
+                                .padding(.vertical, 10) // Reduce vertical padding
+                                .padding(.horizontal, 20) // Reduce horizontal padding
+                                .background(Color.white) // Set white background
+                                .cornerRadius(10)
+                                .padding(.horizontal)
+                        }
+                        .padding(.bottom, 30) // Penyesuaian posisi tombol
                     }
-                    .padding(.bottom, 30) // Penyesuaian posisi tombol
                 }
                 .padding()
             }
@@ -80,17 +88,26 @@ struct OnboardingView2: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: OnboardingView3()) {
-                    Text("Next")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(LinearGradient(gradient: Gradient(colors: [Color.purple, Color.blue]), startPoint: .leading, endPoint: .trailing))
-                        .cornerRadius(10)
-                        .padding(.horizontal)
+                VStack {
+                    HStack(spacing: 10) {
+                        CircleView(selected: false)
+                        CircleView(selected: true)
+                        CircleView(selected: false)
+                    }
+                    .padding(.bottom, 20)
+                    
+                    NavigationLink(destination: OnboardingView3()) {
+                        Text("Next")
+                            .font(.headline)
+                            .foregroundColor(.purple)
+                            .padding(.vertical, 10) // Reduce vertical padding
+                            .padding(.horizontal, 20) // Reduce horizontal padding
+                            .background(Color.white) // Set white background
+                            .cornerRadius(10)
+                            .padding(.horizontal)
+                    }
+                    .padding(.bottom, 50) // Penyesuaian posisi tombol
                 }
-                .padding(.bottom, 50) // Penyesuaian posisi tombol
             }
             .padding()
         }
@@ -127,20 +144,40 @@ struct OnboardingView3: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: Library2View()) {
-                    Text("Get Started")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(LinearGradient(gradient: Gradient(colors: [Color.purple, Color.blue]), startPoint: .leading, endPoint: .trailing))
-                        .cornerRadius(10)
-                        .padding(.horizontal)
+                VStack {
+                    HStack(spacing: 10) {
+                        CircleView(selected: false)
+                        CircleView(selected: false)
+                        CircleView(selected: true)
+                    }
+                    .padding(.bottom, 20)
+                    
+                    NavigationLink(destination: Library2View()) {
+                        Text("Get Started")
+                            .font(.headline)
+                            .foregroundColor(.purple)
+                            .padding(.vertical, 10) // Reduce vertical padding
+                            .padding(.horizontal, 20) // Reduce horizontal padding
+                            .background(Color.white) // Set white background
+                            .cornerRadius(10)
+                            .padding(.horizontal)
+                    }
+                    .padding(.bottom, 50) // Penyesuaian posisi tombol
                 }
-                .padding(.bottom, 50) // Penyesuaian posisi tombol
             }
             .padding()
         }
+    }
+}
+
+struct CircleView: View {
+    var selected: Bool
+    
+    var body: some View {
+        Circle()
+            .frame(width: 10, height: 10)
+            .foregroundColor(selected ? .purple : .white)
+            .opacity(selected ? 1 : 0.4)
     }
 }
 
