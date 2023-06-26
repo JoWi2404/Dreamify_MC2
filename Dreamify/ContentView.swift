@@ -8,19 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Welcome to dreamify")
+    @State private var value: Double = 0.5
+
+        var body: some View {
+            VStack {
+                Slider(value: $value, in: 0...1, step: 0.001)
+                    .accentColor(.red) // Customize the appearance of the slider track
+                    
+
+                // Display the value of the slider
+                Text("\(value)")
+                    .font(.title)
+                    .padding()
+            }
+            .padding()
         }
-        .padding()
-    }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
+
+
