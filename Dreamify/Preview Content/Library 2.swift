@@ -111,14 +111,16 @@ struct Library2View: View {
                 }
                 .background(Color(hex: 0x574D82))
                 .padding()
-                .navigationBarTitle(".")
+                
                 .navigationBarBackButtonHidden(true)
             }
             .background(Color(hex: 0x574D82))
             .scrollContentBackground(.hidden)
-            .navigationBarHidden(true)
+            
         }
+        .navigationBarHidden(true)
     }
+    
 }
 
 
