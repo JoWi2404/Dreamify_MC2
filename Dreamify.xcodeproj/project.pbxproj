@@ -11,6 +11,7 @@
 		65221EA82A42F007001BAFC8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65221EA72A42F007001BAFC8 /* ContentView.swift */; };
 		65221EAA2A42F008001BAFC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65221EA92A42F008001BAFC8 /* Assets.xcassets */; };
 		65221EAD2A42F008001BAFC8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65221EAC2A42F008001BAFC8 /* Preview Assets.xcassets */; };
+		FAED6FA62A49919600318985 /* Library 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAED6FA52A49919600318985 /* Library 2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		65221EA72A42F007001BAFC8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		65221EA92A42F008001BAFC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65221EAC2A42F008001BAFC8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FAED6FA52A49919600318985 /* Library 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Library 2.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				65221EAC2A42F008001BAFC8 /* Preview Assets.xcassets */,
+				FAED6FA52A49919600318985 /* Library 2.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65221EA82A42F007001BAFC8 /* ContentView.swift in Sources */,
+				FAED6FA62A49919600318985 /* Library 2.swift in Sources */,
 				65221EA62A42F007001BAFC8 /* DreamifyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
