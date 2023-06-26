@@ -16,11 +16,14 @@ struct OnboardingView1: View {
                         .aspectRatio(contentMode: .fit)
                         .padding()
                     
-                    Text("Welcome to Dreamify!")
-                        .font(.title)
-                        .foregroundColor(Color(hex: 0xF7E5B6))
-                        .fontWeight(.bold)
-                        .padding()
+                    Text("Welcome to\nDreamify!")
+                                           .font(.title)
+                                           .foregroundColor(Color(hex: 0xF7E5B6))
+                                           .fontWeight(.bold)
+                                           .multilineTextAlignment(.center)
+                                           .lineLimit(2) // Mengatur batas dua baris
+                                           .minimumScaleFactor(0.5) // Mengatur faktor skala minimum
+                                           .padding()
                     
                     Text("Are you ready to fall into a deep slumber?")
                         .font(.body)
@@ -74,11 +77,14 @@ struct OnboardingView2: View {
                     .aspectRatio(contentMode: .fit)
                     .padding()
                 
-                Text("Voice Recognition")
-                    .foregroundColor(Color(hex: 0xF7E5B6))
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .padding()
+                Text("Voice\nRecognition")
+                                       .font(.title)
+                                       .foregroundColor(Color(hex: 0xF7E5B6))
+                                       .fontWeight(.bold)
+                                       .multilineTextAlignment(.center)
+                                       .lineLimit(2) // Mengatur batas dua baris
+                                       .minimumScaleFactor(0.5) // Mengatur faktor skala minimum
+                                       .padding()
                 
                 Text("Take control of the story with your voice to avoid direct contact with your phone.")
                     .foregroundColor(.white)
@@ -130,11 +136,14 @@ struct OnboardingView3: View {
                     .aspectRatio(contentMode: .fit)
                     .padding()
                 
-                Text("Focus State Activation")
-                    .foregroundColor(Color(hex: 0xF7E5B6))
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .padding()
+                Text("Focus State\nActivation")
+                                       .font(.title)
+                                       .foregroundColor(Color(hex: 0xF7E5B6))
+                                       .fontWeight(.bold)
+                                       .multilineTextAlignment(.center)
+                                       .lineLimit(2) // Mengatur batas dua baris
+                                       .minimumScaleFactor(0.5) // Mengatur faktor skala minimum
+                                       .padding()
                 
                 Text("It will be automatically turned on when a story gets played to provide comfort for your sleep.")
                     .foregroundColor(.white)
