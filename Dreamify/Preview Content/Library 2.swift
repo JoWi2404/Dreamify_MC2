@@ -22,7 +22,7 @@ struct Library2View: View {
     ]
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 List {
                     Section(header:
@@ -161,7 +161,7 @@ struct DetailView: View {
     @State private var isLiked: Bool = false
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack(spacing: 30) {
                 Image(imageData.name)
                     .resizable()

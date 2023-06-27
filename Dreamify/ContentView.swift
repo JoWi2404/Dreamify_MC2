@@ -2,7 +2,7 @@ import SwiftUI
 
 struct OnboardingView1: View {
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 Image("Background")
                     .resizable()
@@ -46,10 +46,10 @@ struct OnboardingView1: View {
                                 .font(.headline)
                                 .foregroundColor(.purple)
                                 .padding(.vertical, 10) // Reduce vertical padding
-                                .padding(.horizontal, 20) // Reduce horizontal padding
+                                .padding(.horizontal, 40) // Reduce horizontal padding
                                 .background(Color.white) // Set white background
                                 .cornerRadius(10)
-                                .padding(.horizontal)
+                                .clipShape(Capsule())
                         }
                         .padding(.bottom, 30) // Penyesuaian posisi tombol
                     }
@@ -107,10 +107,10 @@ struct OnboardingView2: View {
                             .font(.headline)
                             .foregroundColor(.purple)
                             .padding(.vertical, 10) // Reduce vertical padding
-                            .padding(.horizontal, 20) // Reduce horizontal padding
+                            .padding(.horizontal, 40) // Reduce horizontal padding
                             .background(Color.white) // Set white background
                             .cornerRadius(10)
-                            .padding(.horizontal)
+                            .clipShape(Capsule())
                     }
                     .padding(.bottom, 50) // Penyesuaian posisi tombol
                 }
@@ -162,14 +162,14 @@ struct OnboardingView3: View {
                     .padding(.bottom, 20)
                     
                     NavigationLink(destination: Library2View()) {
-                        Text("Get Started")
+                        Text("Start")
                             .font(.headline)
                             .foregroundColor(.purple)
                             .padding(.vertical, 10) // Reduce vertical padding
-                            .padding(.horizontal, 20) // Reduce horizontal padding
+                            .padding(.horizontal, 40) // Reduce horizontal padding
                             .background(Color.white) // Set white background
                             .cornerRadius(10)
-                            .padding(.horizontal)
+                            .clipShape(Capsule())
                     }
                     .padding(.bottom, 50) // Penyesuaian posisi tombol
                 }
