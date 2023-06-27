@@ -11,7 +11,7 @@ import SwiftUI
 struct DreamifyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            OnboardingView1()
         }
     }
 }
