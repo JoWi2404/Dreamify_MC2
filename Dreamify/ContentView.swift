@@ -16,7 +16,7 @@ struct OnboardingView1: View {
                         .aspectRatio(contentMode: .fit)
                         .padding()
                     
-                    Text("Welcome to\nDreamify!")
+                    Text("Welcome to Dreamify!")
                                            .font(.title)
                                            .foregroundColor(Color(hex: 0xF7E5B6))
                                            .fontWeight(.bold)
