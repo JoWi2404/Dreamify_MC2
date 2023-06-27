@@ -26,11 +26,14 @@ struct Library2View: View {
             VStack {
                 List {
                     Section(header:
-                                Text("Select Stories")
-                                                .foregroundColor(Color(hex: 0xF7E5B6))
-                                                .font(.title)
-                                                .padding(.top, 50) // Menambahkan jarak pada bagian atas teks
-                                                .padding(.bottom, 10) // Menambahkan jarak pada bagian bawah teks
+                        Text("Select Stories")
+                            .foregroundColor(Color(hex: 0xF7E5B6))
+                            .font(.title.bold())
+                            .textCase(.none) // Menonaktifkan konversi huruf kapital
+                            .padding(.top, 50)
+                            .padding(.bottom, 10)
+                 
+
                     ) {
                         ScrollView(.horizontal, showsIndicators: false) {
                             LazyHGrid(rows: [GridItem(.flexible())]) {
