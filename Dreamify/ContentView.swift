@@ -1,5 +1,6 @@
 import SwiftUI
 
+
 struct OnboardingView1: View {
     var body: some View {
         NavigationStack {
@@ -204,7 +205,10 @@ struct OnboardingView2_Previews: PreviewProvider {
 }
 
 struct OnboardingView3_Previews: PreviewProvider {
+
     static var previews: some View {
         OnboardingView3()
     }
 }
+
+
