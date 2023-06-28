@@ -15,15 +15,16 @@ struct Library2View: View {
     @State private var nowPlayingTitle = ""
 
     let images = [
-        ImageData(name: "Enchanted Garden", title: "Enchanted Garden", audio: "audio1", description: "d", caption: "Narrator Volume"),
-        ImageData(name: "Oceanic Venture", title: "Oceanic Venture", audio: "audio2", description: ".", caption: "Narrator Volume"),
-        ImageData(name: "Merchant of Hearts", title: "Merchant of Hearts", audio: "audio3", description: "d", caption: "Narrator Volume"),
-        ImageData(name: "Grumpy Dorian", title: "Grumpy Dorian", audio: "audio5", description: "r", caption: "Narrator Volume")
+        ImageData(name: "Enchanted Garden", title: "Enchanted Garden", audio: "audio1", description: "When we think of a garden, we often imagine a place full of brightly glazed flowers along with the sound of pristine water fountain. Have you actually visited a garden who possess these traits? Even if you haven't, worry not. Cover your eyes and experience it yourself as you fall deep into slumber.", caption: "Narrator Volume"),
+        ImageData(name: "Oceanic Venture", title: "Oceanic Venture", audio: "audio2", description: "Whatever lies deep in the ocean will forever remain a mystery. Have you ever wondered what it feels to sail through the magnificent colossus sized of water? Before you fall deeper into your unconscious state, let's have a quick venture, shall we?", caption: "Narrator Volume"),
+        ImageData(name: "Merchant of Hearts", title: "Merchant of Hearts", audio: "audio3", description: "Adora was a reputable merchant for her expertise in potions, vials, and spells that could help with all kinds of love troubles. Despite being called the infamous Merchant of Hearts, Adora stumbled into a love problem with Mark, the guy whom she fell in love with. Can her potion brewing and enchantments be able to fix it? ", caption: "Narrator Volume"),
+        ImageData(name: "Grumpy Dorian", title: "Grumpy Dorian", audio: "audio5", description: "You spilled on his favorite jacket? Unforgivable! Dorian was merely a little kid with a big temper. Whoever got in his way, they’re deemed unforgivable by this grumpy little kid. Are you one of those people, perhaps?", caption: "Narrator Volume")
     ]
 
     var body: some View {
         NavigationStack {
             VStack {
+                
                 List {
                     Section(header:
                                 //Select Story Title
@@ -40,58 +41,60 @@ struct Library2View: View {
                         ScrollView(.horizontal, showsIndicators: false) {
                             LazyHGrid(rows: [GridItem(.flexible())]) {
                                 ForEach(images, id: \.name) { image in
-                                    VStack {
-                                        ZStack(alignment: .bottomLeading) {
+                                    VStack{
+                                        Rectangle()
+                                          .foregroundColor(.clear)
+                                          .frame(width: 304, height: 356)
+                                          .background(
                                             Image(image.name)
-                                                .resizable()
-                                                .aspectRatio(contentMode: .fill)
-                                                .frame(width: 300, height:550)
-                                                .cornerRadius(8)
-                                                .onTapGesture {
-                                                    isShowingDetail = true
-                                                }
+                                              .resizable()
+                                              .aspectRatio(contentMode: .fill)
+                                              .frame(width: 304, height: 356)
+                                              .clipped()
+                                          )
+                                          .cornerRadius(11)
+                                        
+                                        VStack {
+                                            Rectangle()
+                                              .foregroundColor(.clear)
+                                              .frame(width: 305, height: 182)
+                                              .background(.black.opacity(0.21))
+                                              .overlay(
+                                                VStack{
+                                                    //Title Text
+                                                    HStack {
+                                                        Text(image.title)
+                                                            .font(
+                                                        Font.custom("SF Pro", size: 22)
+                                                        .weight(.bold))
+                                                            .foregroundColor(Color(red: 0.97, green: 0.9, blue: 0.71))
+                                                        .padding(.bottom, 5)
+                                                        
+                                                        
+                                                        //Duration Text
+                                                        Text("10:53")
+                                                          .font(
+                                                            Font.custom("SF Pro Text", size: 12)
+                                                              .weight(.semibold)
+                                                          )
+                                                          .multilineTextAlignment(.center)
+                                                          .foregroundColor(.white.opacity(0.5))
 
-                                            Color.black
-                                                .opacity(0.5)
-                                                .frame(height: 60)
-
-                                            VStack(alignment: .leading) {
-                                                Text(image.title)
-                                                    .font(.headline)
-                                                    .foregroundColor(Color(hex: 0xF7E5B6))
-
-                                                HStack {
-                                                    
-                                                    Spacer()
-                                                    
-
-                                                    Button(action: {
-                                                        isPlaying.toggle()
-                                                        nowPlayingTitle = image.title
-                                                    }) {
-                                                        Image(systemName: isPlaying ? "pause.circle.fill" : "play.circle.fill")
-                                                            .font(.title)
-                                                            .foregroundColor(.white)
                                                     }
-                                                    .buttonStyle(BorderlessButtonStyle())
+                                                    //Description Text
+                                                    Text(image.description)
+                                                      .font(Font.custom("SF Pro Text", size: 11))
+                                                      .kerning(0.06)
+                                                      .foregroundColor(.white)
+                                                      .frame(width: 280, height: 65, alignment: .leading)
+                                                    Spacer()
                                                 }
-                                                .padding(.vertical, 4)
-                                                .padding(.horizontal)
-                                                .background(Color.black.opacity(0.5))
-                                                .cornerRadius(4)
-                                            }
-                                            .padding(.bottom, 8)
-                                            .padding(.leading, 8)
-                                        }
-                                        .background(BlurView(style: .systemUltraThinMaterial))
-                                        .clipShape(RoundedRectangle(cornerRadius: 8))
-                                        .onTapGesture {
-                                            isShowingDetail = true
-                                        }
-                                        .sheet(isPresented: $isShowingDetail) {
-                                            DetailView(imageData: image)
+                                              )
+                                              .cornerRadius(11)
+                                            
                                         }
                                     }
+                                    .frame(width: 365, height: 534)
                                 }
                             }
                             .padding(.horizontal)
