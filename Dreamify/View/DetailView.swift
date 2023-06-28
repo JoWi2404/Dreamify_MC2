@@ -10,7 +10,7 @@ import AVKit
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(imageData: ImageData(name: "Enchanted Garden", title: "Enchanted Garden", audio: "audio1", caption: "Narrator Volume"))
+        DetailView(imageData: ImageData(name: "Enchanted Garden", title: "Enchanted Garden", audio: "audio1", description: "", caption: "Narrator Volume"))
     }
 }
 
