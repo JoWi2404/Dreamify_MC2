@@ -14,11 +14,10 @@ struct Library2View: View {
     @State private var nowPlayingTitle = ""
 
     let images = [
-        ImageData(name: "Gundam 1", title: "Title 1", audio: "audio1", caption: "Narrator Volume"),
-        ImageData(name: "Gundam 2", title: "Title 2", audio: "audio2", caption: "Narrator Volume"),
-        ImageData(name: "Gundam 3", title: "Title 3", audio: "audio3", caption: "Narrator Volume"),
-        ImageData(name: "Gundam 4", title: "Title 4", audio: "audio4", caption: "Narrator Volume"),
-        ImageData(name: "Gundam 5", title: "Title 5", audio: "audio5", caption: "Narrator Volume")
+        ImageData(name: "Enchanted Garden", title: "Enchanted Garden", audio: "audio1", caption: "Narrator Volume"),
+        ImageData(name: "Oceanic Venture", title: "Oceanic Venture", audio: "audio2", caption: "Narrator Volume"),
+        ImageData(name: "Merchant of Hearts", title: "Merchant of Hearts", audio: "audio3", caption: "Narrator Volume"),
+        ImageData(name: "Grumpy Dorian", title: "Grumpy Dorian", audio: "audio5", caption: "Narrator Volume")
     ]
 
     var body: some View {
@@ -78,7 +77,6 @@ struct Library2View: View {
                                             }
                                             .padding(.bottom, 8)
                                             .padding(.leading, 8)
-                                            .animation(.default)
                                         }
                                         .background(BlurView(style: .systemUltraThinMaterial))
                                         .clipShape(RoundedRectangle(cornerRadius: 8))
