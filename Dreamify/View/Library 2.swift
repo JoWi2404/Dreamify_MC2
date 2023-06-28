@@ -5,6 +5,7 @@ struct ImageData {
     let name: String
     let title: String
     let audio: String
+    let description: String
     let caption: String
 }
 
@@ -14,10 +15,10 @@ struct Library2View: View {
     @State private var nowPlayingTitle = ""
 
     let images = [
-        ImageData(name: "Enchanted Garden", title: "Enchanted Garden", audio: "audio1", caption: "Narrator Volume"),
-        ImageData(name: "Oceanic Venture", title: "Oceanic Venture", audio: "audio2", caption: "Narrator Volume"),
-        ImageData(name: "Merchant of Hearts", title: "Merchant of Hearts", audio: "audio3", caption: "Narrator Volume"),
-        ImageData(name: "Grumpy Dorian", title: "Grumpy Dorian", audio: "audio5", caption: "Narrator Volume")
+        ImageData(name: "Enchanted Garden", title: "Enchanted Garden", audio: "audio1", description: "d", caption: "Narrator Volume"),
+        ImageData(name: "Oceanic Venture", title: "Oceanic Venture", audio: "audio2", description: ".", caption: "Narrator Volume"),
+        ImageData(name: "Merchant of Hearts", title: "Merchant of Hearts", audio: "audio3", description: "d", caption: "Narrator Volume"),
+        ImageData(name: "Grumpy Dorian", title: "Grumpy Dorian", audio: "audio5", description: "r", caption: "Narrator Volume")
     ]
 
     var body: some View {
@@ -25,6 +26,7 @@ struct Library2View: View {
             VStack {
                 List {
                     Section(header:
+                                //Select Story Title
                         Text("Select Stories")
                             .foregroundColor(Color(hex: 0xF7E5B6))
                             .font(.title.bold())
@@ -34,6 +36,7 @@ struct Library2View: View {
                  
 
                     ) {
+                        //Horizontal Scroll Story
                         ScrollView(.horizontal, showsIndicators: false) {
                             LazyHGrid(rows: [GridItem(.flexible())]) {
                                 ForEach(images, id: \.name) { image in
@@ -42,7 +45,7 @@ struct Library2View: View {
                                             Image(image.name)
                                                 .resizable()
                                                 .aspectRatio(contentMode: .fill)
-                                                .frame(width: 250, height: 450)
+                                                .frame(width: 300, height:550)
                                                 .cornerRadius(8)
                                                 .onTapGesture {
                                                     isShowingDetail = true
@@ -55,10 +58,12 @@ struct Library2View: View {
                                             VStack(alignment: .leading) {
                                                 Text(image.title)
                                                     .font(.headline)
-                                                    .foregroundColor(.white)
+                                                    .foregroundColor(Color(hex: 0xF7E5B6))
 
                                                 HStack {
+                                                    
                                                     Spacer()
+                                                    
 
                                                     Button(action: {
                                                         isPlaying.toggle()

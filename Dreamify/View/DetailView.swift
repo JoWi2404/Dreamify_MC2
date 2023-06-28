@@ -130,3 +130,4 @@ struct DetailView: View {
         isPlaying.toggle()
     }
 }
+
