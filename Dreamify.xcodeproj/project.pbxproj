@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		651153BE2A4C3B00004CA243 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651153BD2A4C3B00004CA243 /* OnboardingView.swift */; };
 		65221EA62A42F007001BAFC8 /* DreamifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65221EA52A42F007001BAFC8 /* DreamifyApp.swift */; };
-		65221EA82A42F007001BAFC8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65221EA72A42F007001BAFC8 /* ContentView.swift */; };
 		65221EAA2A42F008001BAFC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65221EA92A42F008001BAFC8 /* Assets.xcassets */; };
 		65221EAD2A42F008001BAFC8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65221EAC2A42F008001BAFC8 /* Preview Assets.xcassets */; };
 		DA3404792A4ADD2400C2A12B /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3404782A4ADD2400C2A12B /* DetailView.swift */; };
@@ -23,9 +23,9 @@
 
 /* Begin PBXFileReference section */
 		650EBB9C2A496CDE00DA62E2 /* Dreamify.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dreamify.entitlements; sourceTree = "<group>"; };
+		651153BD2A4C3B00004CA243 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		65221EA22A42F007001BAFC8 /* Dreamify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dreamify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65221EA52A42F007001BAFC8 /* DreamifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamifyApp.swift; sourceTree = "<group>"; };
-		65221EA72A42F007001BAFC8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		65221EA92A42F008001BAFC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65221EAC2A42F008001BAFC8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DA3404782A4ADD2400C2A12B /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
@@ -90,13 +90,13 @@
 		65221EB32A42F0F6001BAFC8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				65221EA72A42F007001BAFC8 /* ContentView.swift */,
 				FAED6FA52A49919600318985 /* Library 2.swift */,
 				DA3404782A4ADD2400C2A12B /* DetailView.swift */,
 				DA34047A2A4AE22A00C2A12B /* OnboardingView1.swift */,
 				DA34047C2A4AE25100C2A12B /* OnboardingView2.swift */,
 				DA34047E2A4AE27500C2A12B /* OnboardingView3.swift */,
 				DA3404802A4AE2BE00C2A12B /* CircleView.swift */,
+				651153BD2A4C3B00004CA243 /* OnboardingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -190,8 +190,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA3404812A4AE2BE00C2A12B /* CircleView.swift in Sources */,
-				65221EA82A42F007001BAFC8 /* ContentView.swift in Sources */,
 				DA34047F2A4AE27500C2A12B /* OnboardingView3.swift in Sources */,
+				651153BE2A4C3B00004CA243 /* OnboardingView.swift in Sources */,
 				DA3404792A4ADD2400C2A12B /* DetailView.swift in Sources */,
 				FAED6FA62A49919600318985 /* Library 2.swift in Sources */,
 				65221EA62A42F007001BAFC8 /* DreamifyApp.swift in Sources */,

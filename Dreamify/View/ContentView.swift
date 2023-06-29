@@ -1,32 +1,20 @@
+//
+//  ContentView.swift
+//  Dreamify
+//
+//  Created by Joey Wiryawan on 28/06/23.
+//
+
 import SwiftUI
 
+struct ContentView: View {
+    var body: some View {
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    }
+}
 
-
-
-
-
-
-
-
-
-
-//struct OnboardingView1_Previews: PreviewProvider {
-//    static var previews: some View {
-//        OnboardingView1()
-//    }
-//}
-//
-//struct OnboardingView2_Previews: PreviewProvider {
-//    static var previews: some View {
-//        OnboardingView2()
-//    }
-//}
-//
-//struct OnboardingView3_Previews: PreviewProvider {
-//
-//    static var previews: some View {
-//        OnboardingView3()
-//    }
-//}
-
-
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
