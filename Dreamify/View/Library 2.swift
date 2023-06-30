@@ -1,7 +1,8 @@
 import SwiftUI
 import AVKit
 
-struct ImageData {
+struct ImageData: Identifiable {
+    var id = UUID()
     let name: String
     let title: String
     let audio: String
@@ -11,8 +12,11 @@ struct ImageData {
 
 struct Library2View: View {
     @State private var isShowingDetail = false
-    @State private var isPlaying = false
     @State private var nowPlayingTitle = ""
+    @State var isPresentSheet = false
+    @State var selectedStory: ImageData = ImageData(name: "", title: "", audio: "", description: "", caption: "")
+    @State var audioBrownNoise: AVAudioPlayer!
+    @State var audioNarration: AVAudioPlayer!
 
     let images = [
         ImageData(name: "Enchanted Garden", title: "Enchanted Garden", audio: "audio1", description: "When we think of a garden, we often imagine a place full of brightly glazed flowers along with the sound of pristine water fountain. Have you actually visited a garden who possess these traits? Even if you haven't, worry not. Cover your eyes and experience it yourself as you fall deep into slumber.", caption: "Narrator Volume"),
@@ -23,111 +27,136 @@ struct Library2View: View {
 
     var body: some View {
         NavigationStack {
-            VStack {
-                
-                List {
-                    Section(header:
-                                //Select Story Title
-                        Text("Select Stories")
-                            .foregroundColor(Color(hex: 0xF7E5B6))
-                            .font(.title.bold())
-                            .textCase(.none) // Menonaktifkan konversi huruf kapital
-                            .padding(.top, 50)
-                            .padding(.bottom, 10)
-                 
-
-                    ) {
-                        //Horizontal Scroll Story
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            LazyHGrid(rows: [GridItem(.flexible())]) {
-                                ForEach(images, id: \.name) { image in
-                                    VStack{
-                                        Rectangle()
-                                          .foregroundColor(.clear)
-                                          .frame(width: 304, height: 356)
-                                          .background(
-                                            Image(image.name)
-                                              .resizable()
-                                              .aspectRatio(contentMode: .fill)
-                                              .frame(width: 304, height: 356)
-                                              .clipped()
-                                          )
-                                          .cornerRadius(11)
+            VStack(alignment: .leading, spacing: 0){
+                Text("Select Stories")
+                    .font(.largeTitle)
+                    .fontWeight(.heavy)
+                    .foregroundColor(Color("lightYellow"))
+                    .multilineTextAlignment(.leading)
+                    .padding()
+                    .padding(.top, 30)
+                VStack {
+                    //Horizontal Scroll Story
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        LazyHGrid(rows: [GridItem(.flexible(), spacing: 5)]) {
+                            ForEach(images, id: \.name) { image in
+                                Button(action: {
+                                    selectedStory = image
+                                    isPresentSheet.toggle()
+                                }){
+                                    VStack(spacing:0){
+                                        Image(image.name)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                            .frame(width: 304, height: 356)
+                                            .clipped()
+                                            .padding(.bottom, 0)
+                                            .cornerRadius(11)
                                         
-                                        VStack {
-                                            Rectangle()
-                                              .foregroundColor(.clear)
-                                              .frame(width: 305, height: 182)
-                                              .background(.black.opacity(0.21))
-                                              .overlay(
+                                        Rectangle()
+                                            .padding(.top, 0)
+                                            .foregroundColor(.clear)
+                                            .frame(width: 305, height: 220)
+                                            .background(Color(red:0.15686, green: 0.129412, blue: 0.215686))
+                                        //                                                    .background(.black.opacity(0.21))
+                                            .overlay(
                                                 VStack{
                                                     //Title Text
                                                     HStack {
                                                         Text(image.title)
-                                                            .font(
-                                                        Font.custom("SF Pro", size: 22)
-                                                        .weight(.bold))
+                                                            .font(.system(.title2)
+                                                                .weight(.heavy))
                                                             .foregroundColor(Color(red: 0.97, green: 0.9, blue: 0.71))
-                                                        .padding(.bottom, 5)
+                                                            .padding(.bottom, 5)
+                                                            .padding(.top, 10)
                                                         
-                                                        
+                                                        Spacer()
                                                         //Duration Text
                                                         Text("10:53")
-                                                          .font(
-                                                            Font.custom("SF Pro Text", size: 12)
-                                                              .weight(.semibold)
-                                                          )
-                                                          .multilineTextAlignment(.center)
-                                                          .foregroundColor(.white.opacity(0.5))
-
+                                                            .font(
+                                                                Font.custom("SF Pro Text", size: 12)
+                                                                    .weight(.semibold)
+                                                            )
+                                                            .multilineTextAlignment(.leading)
+                                                            .foregroundColor(.white.opacity(0.5))
+                                                        
                                                     }
+                                                    .padding(.horizontal)
+                                                    .padding(.top, 10)
+                                                    
                                                     //Description Text
                                                     Text(image.description)
-                                                      .font(Font.custom("SF Pro Text", size: 11))
-                                                      .kerning(0.06)
-                                                      .foregroundColor(.white)
-                                                      .frame(width: 280, height: 65, alignment: .leading)
+                                                        .font(.caption)
+                                                        .multilineTextAlignment(.leading)
+                                                        .kerning(0.06)
+                                                        .foregroundColor(.white)
+                                                        .frame(width: 280, alignment: .leading)
+                                                    
+                                                    Spacer()
+                                                    HStack{
+                                                        Text(image.caption)
+                                                            .font(
+                                                                Font.custom("SF Pro Text", size: 11)
+                                                                    .weight(.semibold)
+                                                            )
+                                                            .foregroundColor(Color("darkYellow"))
+                                                            .multilineTextAlignment(.center)
+                                                            .padding(.horizontal, 10)
+                                                            .background(
+                                                                Rectangle()
+                                                                    .foregroundColor(.clear)
+                                                                    .background(.white.opacity(0.1))
+                                                                    .cornerRadius(10)
+                                                            )
+                                                        Spacer()
+                                                    }.padding(.horizontal)
+                                                    
                                                     Spacer()
                                                 }
-                                              )
-                                              .cornerRadius(11)
-                                            
-                                        }
+                                            )
+                                            .cornerRadius(11)
+                                        
+                                        //                                            }
                                     }
-                                    .frame(width: 365, height: 534)
+                                    //                                        .frame(width: 365, height: 534)
+                                    .padding(.horizontal, 0)
+                                }.sheet(isPresented: $isPresentSheet) {
+                                    DetailView(imageData: $selectedStory, audioBrownNoise: $audioBrownNoise, audioNarration: $audioNarration)
                                 }
                             }
-                            .padding(.horizontal)
+                        }
+                        .padding(.horizontal)
+                    }
+                    
+                    Spacer()
+                    
+                }
+                HStack{
+                    if(selectedStory.name != ""){
+                        Image(selectedStory.name)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 50, height: 50)
+                            .clipped()
+                        Text(selectedStory.title)
+                            .foregroundColor(Color(red: 0.97, green: 0.9, blue: 0.71))
+                        Spacer()
+                        Button(action: {
+                            
+                        }){
+                            Image(systemName: "play.fill")
                         }
                     }
-                    .listRowBackground(Color(hex: 0x574D82))
+                    
                 }
-                .listStyle(InsetGroupedListStyle())
                 
-                VStack {
-                    Rectangle()
-                        .foregroundColor(.purple)
-                        .frame(height: 50)
-                        .overlay(
-                            Button(action: {
-                                // Tambahkan aksi yang diinginkan di sini
-                            }) {
-                                Image(systemName: "play.circle.fill")
-                                    .font(.system(size: 30))
-                                    .foregroundColor(.white)
-                            }
-                        )
-                }
-                .background(Color(hex: 0x574D82))
-                .padding()
-                
-                .navigationBarBackButtonHidden(true)
+                Spacer()
             }
-            .background(Color(hex: 0x574D82))
+            .background(Color(red:0.19078, green:0.1647, blue:0.27058))
             .scrollContentBackground(.hidden)
-            
         }
         .navigationBarHidden(true)
+        
     }
     
 }

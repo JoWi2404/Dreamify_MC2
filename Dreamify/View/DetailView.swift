@@ -10,19 +10,18 @@ import AVKit
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(imageData: ImageData(name: "Enchanted Garden", title: "Enchanted Garden", audio: "audio1", description: "", caption: "Narrator Volume"))
+        DetailView(imageData: .constant(ImageData(name: "", title: "", audio: "", description: "", caption: "")), audioBrownNoise: .constant(AVAudioPlayer()), audioNarration: .constant(AVAudioPlayer()))
     }
 }
 
 struct DetailView: View {
-    let imageData: ImageData
+    @Binding var imageData: ImageData
+    @Binding var audioBrownNoise: AVAudioPlayer!
+    @Binding var audioNarration: AVAudioPlayer!
     
 //    @State private var isPlaying: Bool = false
     @State private var playbackProgress: Float = 0.5
     @State private var isLiked: Bool = false
-    
-    @State var audioBrownNoise: AVAudioPlayer!
-    @State var audioNarration: AVAudioPlayer!
     @State var currentSec : Float = 0.0
     @State var audioDuration:Float = 0.0
     @State var brownDuration:Float = 0.0
@@ -31,11 +30,12 @@ struct DetailView: View {
     @State var isEditingTime = false
     @State var remainingDuration = ""
     @State var currentDuration = ""
-    @State var isPlaying = false
+    @State var isPlaying: Bool = false
     @State var narrationIsPlaying = false
     @State private var timer: Timer? = nil
     
     var body: some View {
+       
         NavigationStack {
             VStack{
                 VStack() {
