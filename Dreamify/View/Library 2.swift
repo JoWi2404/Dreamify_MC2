@@ -19,10 +19,10 @@ struct Library2View: View {
     @State var audioNarration: AVAudioPlayer!
 
     let images = [
-        ImageData(name: "Enchanted Garden", title: "Enchanted Garden", audio: "audio1", description: "When we think of a garden, we often imagine a place full of brightly glazed flowers along with the sound of pristine water fountain. Have you actually visited a garden who possess these traits? Even if you haven't, worry not. Cover your eyes and experience it yourself as you fall deep into slumber.", caption: "Narrator Volume"),
-        ImageData(name: "Oceanic Venture", title: "Oceanic Venture", audio: "audio2", description: "Whatever lies deep in the ocean will forever remain a mystery. Have you ever wondered what it feels to sail through the magnificent colossus sized of water? Before you fall deeper into your unconscious state, let's have a quick venture, shall we?", caption: "Narrator Volume"),
-        ImageData(name: "Merchant of Hearts", title: "Merchant of Hearts", audio: "audio3", description: "Adora was a reputable merchant for her expertise in potions, vials, and spells that could help with all kinds of love troubles. Despite being called the infamous Merchant of Hearts, Adora stumbled into a love problem with Mark, the guy whom she fell in love with. Can her potion brewing and enchantments be able to fix it? ", caption: "Narrator Volume"),
-        ImageData(name: "Grumpy Dorian", title: "Grumpy Dorian", audio: "audio5", description: "You spilled on his favorite jacket? Unforgivable! Dorian was merely a little kid with a big temper. Whoever got in his way, they’re deemed unforgivable by this grumpy little kid. Are you one of those people, perhaps?", caption: "Narrator Volume")
+        ImageData(name: "Enchanted Garden", title: "Enchanted Garden", audio: "Enchanted_Garden", description: "When we think of a garden, we often imagine a place full of brightly glazed flowers along with the sound of pristine water fountain. Have you actually visited a garden who possess these traits? Even if you haven't, worry not. Cover your eyes and experience it yourself as you fall deep into slumber.", caption: "Narrator Volume"),
+        ImageData(name: "Oceanic Venture", title: "Oceanic Venture", audio: "Oceanic_Venture", description: "Whatever lies deep in the ocean will forever remain a mystery. Have you ever wondered what it feels to sail through the magnificent colossus sized of water? Before you fall deeper into your unconscious state, let's have a quick venture, shall we?", caption: "Narrator Volume"),
+        ImageData(name: "Merchant of Hearts", title: "Merchant of Hearts", audio: "Merchant_of_Hearts", description: "Adora was a reputable merchant for her expertise in potions, vials, and spells that could help with all kinds of love troubles. Despite being called the infamous Merchant of Hearts, Adora stumbled into a love problem with Mark, the guy whom she fell in love with. Can her potion brewing and enchantments be able to fix it? ", caption: "Narrator Volume"),
+        ImageData(name: "Grumpy Dorian", title: "Grumpy Dorian", audio: "Grumpy_Dorian", description: "You spilled on his favorite jacket? Unforgivable! Dorian was merely a little kid with a big temper. Whoever got in his way, they’re deemed unforgivable by this grumpy little kid. Are you one of those people, perhaps?", caption: "Narrator Volume")
     ]
 
     var body: some View {
@@ -43,8 +43,8 @@ struct Library2View: View {
                                 Button(action: {
                                     selectedStory = image
                                     isPresentSheet.toggle()
-                                }){
-                                    VStack(spacing:0){
+                                }) {
+                                    VStack(spacing: 0) {
                                         Image(image.name)
                                             .resizable()
                                             .aspectRatio(contentMode: .fill)
@@ -52,53 +52,42 @@ struct Library2View: View {
                                             .clipped()
                                             .padding(.bottom, 0)
                                             .cornerRadius(11)
-                                        
+
                                         Rectangle()
                                             .padding(.top, 0)
                                             .foregroundColor(.clear)
                                             .frame(width: 305, height: 220)
-                                            .background(Color(red:0.15686, green: 0.129412, blue: 0.215686))
-                                        //                                                    .background(.black.opacity(0.21))
+                                            .background(Color(red: 0.15686, green: 0.129412, blue: 0.215686))
                                             .overlay(
-                                                VStack{
-                                                    //Title Text
+                                                VStack {
                                                     HStack {
                                                         Text(image.title)
-                                                            .font(.system(.title2)
-                                                                .weight(.heavy))
+                                                            .font(.system(.title2))
+                                                            .fontWeight(.heavy)
                                                             .foregroundColor(Color(red: 0.97, green: 0.9, blue: 0.71))
                                                             .padding(.bottom, 5)
                                                             .padding(.top, 10)
-                                                        
                                                         Spacer()
-                                                        //Duration Text
                                                         Text("10:53")
-                                                            .font(
-                                                                Font.custom("SF Pro Text", size: 12)
-                                                                    .weight(.semibold)
-                                                            )
+                                                            .font(Font.custom("SF Pro Text", size: 12).weight(.semibold))
                                                             .multilineTextAlignment(.leading)
                                                             .foregroundColor(.white.opacity(0.5))
-                                                        
                                                     }
                                                     .padding(.horizontal)
                                                     .padding(.top, 10)
-                                                    
-                                                    //Description Text
+
                                                     Text(image.description)
                                                         .font(.caption)
                                                         .multilineTextAlignment(.leading)
                                                         .kerning(0.06)
                                                         .foregroundColor(.white)
                                                         .frame(width: 280, alignment: .leading)
-                                                    
+
                                                     Spacer()
-                                                    HStack{
+
+                                                    HStack {
                                                         Text(image.caption)
-                                                            .font(
-                                                                Font.custom("SF Pro Text", size: 11)
-                                                                    .weight(.semibold)
-                                                            )
+                                                            .font(Font.custom("SF Pro Text", size: 11).weight(.semibold))
                                                             .foregroundColor(Color("darkYellow"))
                                                             .multilineTextAlignment(.center)
                                                             .padding(.horizontal, 10)
@@ -109,21 +98,36 @@ struct Library2View: View {
                                                                     .cornerRadius(10)
                                                             )
                                                         Spacer()
-                                                    }.padding(.horizontal)
-                                                    
+
+                                                        Button(action: {
+                                                            // Implement play button action here
+                                                        }) {
+                                                            ZStack {
+                                                                Circle()
+                                                                    .foregroundColor(Color.gray)
+                                                                    .frame(width: 30, height: 30)
+
+                                                                Image(systemName: "play.fill")
+                                                                    .foregroundColor(.white)
+                                                                    .font(.title3)
+                                                            }
+                                                        }
+                                                    }
+                                                    .padding(.horizontal)
+
+
                                                     Spacer()
                                                 }
                                             )
                                             .cornerRadius(11)
-                                        
-                                        //                                            }
                                     }
-                                    //                                        .frame(width: 365, height: 534)
                                     .padding(.horizontal, 0)
-                                }.sheet(isPresented: $isPresentSheet) {
+                                }
+                                .sheet(isPresented: $isPresentSheet) {
                                     DetailView(imageData: $selectedStory, audioBrownNoise: $audioBrownNoise, audioNarration: $audioNarration)
                                 }
                             }
+
                         }
                         .padding(.horizontal)
                     }

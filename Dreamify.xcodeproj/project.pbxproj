@@ -18,6 +18,14 @@
 		DA3404812A4AE2BE00C2A12B /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3404802A4AE2BE00C2A12B /* CircleView.swift */; };
 		DA3404862A4C1B6900C2A12B /* queencard.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DA3404842A4C1B6800C2A12B /* queencard.mp3 */; };
 		DA3404872A4C1B6900C2A12B /* treasure.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DA3404852A4C1B6800C2A12B /* treasure.mp3 */; };
+		FA98FBFB2A4EBF1E0026664A /* Enchanted_Garden_Narator.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA98FBFA2A4EBF1E0026664A /* Enchanted_Garden_Narator.mp3 */; };
+		FA98FBFD2A4EBF290026664A /* Enchanted_Garden_BG.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA98FBFC2A4EBF290026664A /* Enchanted_Garden_BG.mp3 */; };
+		FA98FBFF2A4EBF310026664A /* Oceanic_Venture_Narator.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA98FBFE2A4EBF310026664A /* Oceanic_Venture_Narator.mp3 */; };
+		FA98FC012A4EBF370026664A /* Oceanic_Venture_BG.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA98FC002A4EBF360026664A /* Oceanic_Venture_BG.mp3 */; };
+		FA98FC032A4EBF3C0026664A /* Merchant_of_Hearts_Narator.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA98FC022A4EBF3C0026664A /* Merchant_of_Hearts_Narator.mp3 */; };
+		FA98FC052A4EBF400026664A /* Merchant_of_Hearts_BG.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA98FC042A4EBF400026664A /* Merchant_of_Hearts_BG.mp3 */; };
+		FA98FC072A4EBF490026664A /* Grumpy_Dorian_Narator.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA98FC062A4EBF490026664A /* Grumpy_Dorian_Narator.mp3 */; };
+		FA98FC092A4EBF510026664A /* GrumpyDorian_BG.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA98FC082A4EBF510026664A /* GrumpyDorian_BG.mp3 */; };
 		FAED6FA62A49919600318985 /* Library 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAED6FA52A49919600318985 /* Library 2.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +43,14 @@
 		DA3404802A4AE2BE00C2A12B /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		DA3404842A4C1B6800C2A12B /* queencard.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = queencard.mp3; sourceTree = "<group>"; };
 		DA3404852A4C1B6800C2A12B /* treasure.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = treasure.mp3; sourceTree = "<group>"; };
+		FA98FBFA2A4EBF1E0026664A /* Enchanted_Garden_Narator.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Enchanted_Garden_Narator.mp3; path = ../../../../../Downloads/Enchanted_Garden_Narator.mp3; sourceTree = "<group>"; };
+		FA98FBFC2A4EBF290026664A /* Enchanted_Garden_BG.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Enchanted_Garden_BG.mp3; path = ../../../../../Downloads/Enchanted_Garden_BG.mp3; sourceTree = "<group>"; };
+		FA98FBFE2A4EBF310026664A /* Oceanic_Venture_Narator.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Oceanic_Venture_Narator.mp3; path = ../../../../../Downloads/Oceanic_Venture_Narator.mp3; sourceTree = "<group>"; };
+		FA98FC002A4EBF360026664A /* Oceanic_Venture_BG.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Oceanic_Venture_BG.mp3; path = ../../../../../Downloads/Oceanic_Venture_BG.mp3; sourceTree = "<group>"; };
+		FA98FC022A4EBF3C0026664A /* Merchant_of_Hearts_Narator.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Merchant_of_Hearts_Narator.mp3; path = ../../../../../Downloads/Merchant_of_Hearts_Narator.mp3; sourceTree = "<group>"; };
+		FA98FC042A4EBF400026664A /* Merchant_of_Hearts_BG.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Merchant_of_Hearts_BG.mp3; path = ../../../../../Downloads/Merchant_of_Hearts_BG.mp3; sourceTree = "<group>"; };
+		FA98FC062A4EBF490026664A /* Grumpy_Dorian_Narator.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Grumpy_Dorian_Narator.mp3; path = ../../../../../Downloads/Grumpy_Dorian_Narator.mp3; sourceTree = "<group>"; };
+		FA98FC082A4EBF510026664A /* GrumpyDorian_BG.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = GrumpyDorian_BG.mp3; path = ../../../../../Downloads/GrumpyDorian_BG.mp3; sourceTree = "<group>"; };
 		FAED6FA52A49919600318985 /* Library 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Library 2.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +127,14 @@
 		DA3404882A4C1B8A00C2A12B /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				FA98FBFA2A4EBF1E0026664A /* Enchanted_Garden_Narator.mp3 */,
+				FA98FBFC2A4EBF290026664A /* Enchanted_Garden_BG.mp3 */,
+				FA98FBFE2A4EBF310026664A /* Oceanic_Venture_Narator.mp3 */,
+				FA98FC002A4EBF360026664A /* Oceanic_Venture_BG.mp3 */,
+				FA98FC022A4EBF3C0026664A /* Merchant_of_Hearts_Narator.mp3 */,
+				FA98FC042A4EBF400026664A /* Merchant_of_Hearts_BG.mp3 */,
+				FA98FC062A4EBF490026664A /* Grumpy_Dorian_Narator.mp3 */,
+				FA98FC082A4EBF510026664A /* GrumpyDorian_BG.mp3 */,
 				DA3404842A4C1B6800C2A12B /* queencard.mp3 */,
 				DA3404852A4C1B6800C2A12B /* treasure.mp3 */,
 			);
@@ -176,9 +200,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				65221EAD2A42F008001BAFC8 /* Preview Assets.xcassets in Resources */,
+				FA98FC032A4EBF3C0026664A /* Merchant_of_Hearts_Narator.mp3 in Resources */,
 				DA3404872A4C1B6900C2A12B /* treasure.mp3 in Resources */,
 				DA3404862A4C1B6900C2A12B /* queencard.mp3 in Resources */,
+				FA98FBFD2A4EBF290026664A /* Enchanted_Garden_BG.mp3 in Resources */,
+				FA98FBFF2A4EBF310026664A /* Oceanic_Venture_Narator.mp3 in Resources */,
+				FA98FC092A4EBF510026664A /* GrumpyDorian_BG.mp3 in Resources */,
+				FA98FBFB2A4EBF1E0026664A /* Enchanted_Garden_Narator.mp3 in Resources */,
+				FA98FC072A4EBF490026664A /* Grumpy_Dorian_Narator.mp3 in Resources */,
+				FA98FC012A4EBF370026664A /* Oceanic_Venture_BG.mp3 in Resources */,
 				65221EAA2A42F008001BAFC8 /* Assets.xcassets in Resources */,
+				FA98FC052A4EBF400026664A /* Merchant_of_Hearts_BG.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
