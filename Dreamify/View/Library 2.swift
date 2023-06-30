@@ -17,6 +17,8 @@ struct Library2View: View {
     @State var selectedStory: ImageData = ImageData(name: "", title: "", audio: "", description: "", caption: "")
     @State var audioBrownNoise: AVAudioPlayer!
     @State var audioNarration: AVAudioPlayer!
+    @State var isPlaying: Bool = false
+    @State var buttonPlay = "pause.fill"
 
     let images = [
         ImageData(name: "Enchanted Garden", title: "Enchanted Garden", audio: "Enchanted_Garden", description: "When we think of a garden, we often imagine a place full of brightly glazed flowers along with the sound of pristine water fountain. Have you actually visited a garden who possess these traits? Even if you haven't, worry not. Cover your eyes and experience it yourself as you fall deep into slumber.", caption: "Narrator Volume"),
@@ -43,6 +45,17 @@ struct Library2View: View {
                                 Button(action: {
                                     selectedStory = image
                                     isPresentSheet.toggle()
+                                    if(image.title != nowPlayingTitle && nowPlayingTitle != ""){
+                                        audioNarration.pause()
+                                        audioBrownNoise.pause()
+                                        isPlaying = false
+                                    }
+//                                    if(isPlaying){
+//
+//                                    }
+                                    nowPlayingTitle = image.title
+
+//                                    nowPlayingTitle =
                                 }) {
                                     VStack(spacing: 0) {
                                         Image(image.name)
@@ -123,8 +136,14 @@ struct Library2View: View {
                                     }
                                     .padding(.horizontal, 0)
                                 }
-                                .sheet(isPresented: $isPresentSheet) {
-                                    DetailView(imageData: $selectedStory, audioBrownNoise: $audioBrownNoise, audioNarration: $audioNarration)
+                                .sheet(isPresented: $isPresentSheet, onDismiss:{
+                                    if(isPlaying){
+                                        buttonPlay = "pause.fill"
+                                    }else{
+                                        buttonPlay = "play.fill"
+                                    }
+                                }) {
+                                    DetailView(imageData: $selectedStory, audioBrownNoise: $audioBrownNoise, audioNarration: $audioNarration, isPlaying: $isPlaying)
                                 }
                             }
 
@@ -146,13 +165,26 @@ struct Library2View: View {
                             .foregroundColor(Color(red: 0.97, green: 0.9, blue: 0.71))
                         Spacer()
                         Button(action: {
-                            
+                            if(isPlaying){
+                                buttonPlay = "play.fill"
+                                isPlaying = false
+                                audioBrownNoise.pause()
+                                audioNarration.pause()
+                            }else{
+                                buttonPlay = "pause.fill"
+                                isPlaying = true
+                                audioBrownNoise.play()
+                                audioNarration.play()
+                            }
                         }){
-                            Image(systemName: "play.fill")
+                            Image(systemName: buttonPlay).foregroundColor(Color("lightYellow"))
                         }
                     }
                     
-                }
+                }.padding(.horizontal)
+                    .onTapGesture{
+                        isPresentSheet.toggle()
+                    }
                 
                 Spacer()
             }

@@ -10,7 +10,7 @@ import AVKit
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(imageData: .constant(ImageData(name: "", title: "", audio: "", description: "", caption: "")), audioBrownNoise: .constant(AVAudioPlayer()), audioNarration: .constant(AVAudioPlayer()))
+        DetailView(imageData: .constant(ImageData(name: "", title: "", audio: "", description: "", caption: "")), audioBrownNoise: .constant(AVAudioPlayer()), audioNarration: .constant(AVAudioPlayer()), isPlaying: .constant(false))
     }
 }
 
@@ -18,6 +18,7 @@ struct DetailView: View {
     @Binding var imageData: ImageData
     @Binding var audioBrownNoise: AVAudioPlayer!
     @Binding var audioNarration: AVAudioPlayer!
+    @Binding var isPlaying: Bool 
     
 //    @State private var isPlaying: Bool = false
     @State private var playbackProgress: Float = 0.5
@@ -30,7 +31,6 @@ struct DetailView: View {
     @State var isEditingTime = false
     @State var remainingDuration = ""
     @State var currentDuration = ""
-    @State var isPlaying: Bool = false
     @State var narrationIsPlaying = false
     @State private var timer: Timer? = nil
     
@@ -199,9 +199,9 @@ struct DetailView: View {
                 .navigationBarHidden(true)
                 .padding(15)
                 .onAppear{
-                    let soundBrownNoise = Bundle.main.path(forResource: "treasure", ofType: "mp3")
+                    let soundBrownNoise = Bundle.main.path(forResource: imageData.audio+"_BG", ofType: "mp3")
                     self.audioBrownNoise = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: soundBrownNoise!))
-                    let soundNarration = Bundle.main.path(forResource: "queencard", ofType: "mp3")
+                    let soundNarration = Bundle.main.path(forResource: imageData.audio+"_Narator", ofType: "mp3")
                     self.audioNarration = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: soundNarration!))
                     
                     audioDuration = Float(audioNarration?.duration ?? 0)
