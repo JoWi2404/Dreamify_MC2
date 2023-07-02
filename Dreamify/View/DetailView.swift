@@ -10,7 +10,7 @@ import AVKit
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(imageData: .constant(ImageData(name: "", title: "", audio: "", description: "", caption: "")), audioBrownNoise: .constant(AVAudioPlayer()), audioNarration: .constant(AVAudioPlayer()), isPlaying: .constant(false))
+        DetailView(imageData: .constant(ImageData(name: "", title: "", audio: "", description: "", caption: "")), audioBrownNoise: .constant(AVAudioPlayer()), audioNarration: .constant(AVAudioPlayer()), isPlaying: .constant(false), currentSec: .constant(0.0))
     }
 }
 
@@ -18,12 +18,13 @@ struct DetailView: View {
     @Binding var imageData: ImageData
     @Binding var audioBrownNoise: AVAudioPlayer!
     @Binding var audioNarration: AVAudioPlayer!
-    @Binding var isPlaying: Bool 
+    @Binding var isPlaying: Bool
+    @Binding var currentSec : Float
+
     
 //    @State private var isPlaying: Bool = false
     @State private var playbackProgress: Float = 0.5
     @State private var isLiked: Bool = false
-    @State var currentSec : Float = 0.0
     @State var audioDuration:Float = 0.0
     @State var brownDuration:Float = 0.0
     @State var volume = 1.0
@@ -31,8 +32,9 @@ struct DetailView: View {
     @State var isEditingTime = false
     @State var remainingDuration = ""
     @State var currentDuration = ""
-    @State var narrationIsPlaying = false
+    @State var narrationIsPlaying = true
     @State private var timer: Timer? = nil
+    @State private var selectedTitle: String = ""
     
     var body: some View {
        
@@ -142,14 +144,7 @@ struct DetailView: View {
                                 narrationIsPlaying = true
                                 
                                 //update timer
-                                timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
-                                    updateTime()
-                                    print("current time: ", currentSec)
-                                    if (currentSec >= audioDuration) {
-                                        narrationIsPlaying = false
-                                        print("end")
-                                    }
-                                }
+                                timerCounter()
                             }) {
                                 Image(systemName: "play.fill").resizable()
                                     .frame(width: 50, height: 50)
@@ -199,11 +194,15 @@ struct DetailView: View {
                 .navigationBarHidden(true)
                 .padding(15)
                 .onAppear{
-                    let soundBrownNoise = Bundle.main.path(forResource: imageData.audio+"_BG", ofType: "mp3")
-                    self.audioBrownNoise = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: soundBrownNoise!))
-                    let soundNarration = Bundle.main.path(forResource: imageData.audio+"_Narator", ofType: "mp3")
-                    self.audioNarration = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: soundNarration!))
-                    
+                    selectedTitle = self.audioBrownNoise?.url?.lastPathComponent ?? ""
+                    if(selectedTitle != imageData.audio+"_BG.mp3"){
+                        print("masuk")
+                        let soundBrownNoise = Bundle.main.path(forResource: imageData.audio+"_BG", ofType: "mp3")
+                        self.audioBrownNoise = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: soundBrownNoise!))
+                        let soundNarration = Bundle.main.path(forResource: imageData.audio+"_Narator", ofType: "mp3")
+                        self.audioNarration = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: soundNarration!))
+                    }
+
                     audioDuration = Float(audioNarration?.duration ?? 0)
                     brownDuration = Float(audioBrownNoise?.duration ?? 0)
                     
@@ -218,6 +217,12 @@ struct DetailView: View {
                     let minutes = currentTime1/60
                     let seconds = currentTime1 - minutes * 60
                     currentDuration = NSString(format: "%02d:%02d", minutes,seconds) as String
+                    
+                    self.audioBrownNoise.play()
+                    self.audioNarration.play()
+                    isPlaying = true
+                    narrationIsPlaying = true
+                    timerCounter()
                 }
             }.background(Color(red:0.19078, green:0.1647, blue:0.27058))
         }
@@ -241,6 +246,16 @@ struct DetailView: View {
         currentDuration = NSString(format: "%02d:%02d", minutes,seconds) as String
         currentSec = Float((audioBrownNoise?.currentTime)!)
         //        currentSecDouble = Double((audioNarration?.currentTime)!)
+    }
+    
+    func timerCounter(){
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+            updateTime()
+            if (currentSec >= audioDuration) {
+                narrationIsPlaying = false
+                print("end")
+            }
+        }
     }
 }
 

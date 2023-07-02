@@ -19,6 +19,9 @@ struct Library2View: View {
     @State var audioNarration: AVAudioPlayer!
     @State var isPlaying: Bool = false
     @State var buttonPlay = "pause.fill"
+    @State private var timer: Timer? = nil
+    @State var currentSec: Float = 0.0
+
 
     let images = [
         ImageData(name: "Enchanted Garden", title: "Enchanted Garden", audio: "Enchanted_Garden", description: "When we think of a garden, we often imagine a place full of brightly glazed flowers along with the sound of pristine water fountain. Have you actually visited a garden who possess these traits? Even if you haven't, worry not. Cover your eyes and experience it yourself as you fall deep into slumber.", caption: "Narrator Volume"),
@@ -143,7 +146,7 @@ struct Library2View: View {
                                         buttonPlay = "play.fill"
                                     }
                                 }) {
-                                    DetailView(imageData: $selectedStory, audioBrownNoise: $audioBrownNoise, audioNarration: $audioNarration, isPlaying: $isPlaying)
+                                    DetailView(imageData: $selectedStory, audioBrownNoise: $audioBrownNoise, audioNarration: $audioNarration, isPlaying: $isPlaying, currentSec: $currentSec)
                                 }
                             }
 
@@ -175,6 +178,8 @@ struct Library2View: View {
                                 isPlaying = true
                                 audioBrownNoise.play()
                                 audioNarration.play()
+                                timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+                                }
                             }
                         }){
                             Image(systemName: buttonPlay).foregroundColor(Color("lightYellow"))
@@ -183,6 +188,8 @@ struct Library2View: View {
                     
                 }.padding(.horizontal)
                     .onTapGesture{
+                        currentSec = Float((audioBrownNoise?.currentTime)!)
+                        print("hehe", currentSec)
                         isPresentSheet.toggle()
                     }
                 
@@ -190,6 +197,13 @@ struct Library2View: View {
             }
             .background(Color(red:0.19078, green:0.1647, blue:0.27058))
             .scrollContentBackground(.hidden)
+            .onAppear{
+                if(isPlaying){
+//                    timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+//                        print("current time: ", audioBrownNoise.currentTime)
+//                    }
+                }
+            }
         }
         .navigationBarHidden(true)
         

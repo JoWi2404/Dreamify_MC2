@@ -29,9 +29,13 @@ struct OnboardingView: View {
                                 .scaledToFit()
                                 .padding()
                             Text(content[count][1])
-                                .font(Font.custom("SF Pro", size: 42).weight(.bold))
+//                                .font(.largeTitle)
+                                .font(.system(size: 42))
+//                                .font(Font.custom("", size: 42).weight(.heavy))
+                                .fontWeight(.heavy)
+                                .foregroundColor(Color("lightYellow"))
                                 .multilineTextAlignment(.center)
-                                .foregroundColor(Color(red: 0.97, green: 0.9, blue: 0.71));
+                                .frame(width: 300.0)
                             
                             Text(content[count][2])
                                 .font(Font.custom("Inter", size: 13))
