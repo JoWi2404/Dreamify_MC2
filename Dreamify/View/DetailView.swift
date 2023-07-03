@@ -224,7 +224,18 @@ struct DetailView: View {
                     narrationIsPlaying = true
                     timerCounter()
                 }
-            }.background(Color(red:0.19078, green:0.1647, blue:0.27058))
+            }
+//            .background(Color(red:0.19078, green:0.1647, blue:0.27058))
+            .background(
+                LinearGradient(
+                    stops: [
+                        Gradient.Stop(color: Color(red: 0.34, green: 0.3, blue: 0.51), location: 0.00),
+                        Gradient.Stop(color: Color(red: 0.16, green: 0.12, blue: 0.19), location: 1.00),
+                    ],
+                    startPoint: UnitPoint(x: 0, y: 0.01),
+                    endPoint: UnitPoint(x: 1, y: 1)
+                )
+            )
         }
     }
     
