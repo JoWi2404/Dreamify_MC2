@@ -21,6 +21,8 @@ struct Library2View: View {
     @State var buttonPlay = "pause.fill"
     @State private var timer: Timer? = nil
     @State var currentSec: Float = 0.0
+    
+    @AppStorage("isOnboarding") var isOnboarding: Bool?
 
 
     let images = [
@@ -192,7 +194,7 @@ struct Library2View: View {
                 }.padding(.horizontal)
                     .onTapGesture{
                         currentSec = Float((audioBrownNoise?.currentTime)!)
-                        print("hehe", currentSec)
+//                        print("hehe", currentSec)
                         isPresentSheet.toggle()
                     }
                 
@@ -210,6 +212,8 @@ struct Library2View: View {
             )
             .scrollContentBackground(.hidden)
             .onAppear{
+                print("kwkw", isOnboarding ?? "kosong")
+                
                 if(isPlaying){
 //                    timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
 //                        print("current time: ", audioBrownNoise.currentTime)

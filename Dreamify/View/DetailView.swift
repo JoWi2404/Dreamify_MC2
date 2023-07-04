@@ -167,7 +167,7 @@ struct DetailView: View {
                     Spacer()
                     
                     VStack(spacing: 0){
-                        Text(imageData.caption)
+                        Text("Narrator's Volume")
                             .multilineTextAlignment(.center)
                             .padding(.top)
                             .fontWeight(.bold)

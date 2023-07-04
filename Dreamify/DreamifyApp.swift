@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct DreamifyApp: App {
+    @AppStorage("isOnboarding") var isOnboarding: Bool = true
+
     var body: some Scene {
         WindowGroup {
-            OnboardingView()
+            if isOnboarding{
+                OnboardingView()
+            }else{
+                Library2View()
+            }
         }
     }
 }
