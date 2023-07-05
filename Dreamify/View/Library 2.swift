@@ -212,13 +212,12 @@ struct Library2View: View {
             )
             .scrollContentBackground(.hidden)
             .onAppear{
-                print("kwkw", isOnboarding ?? "kosong")
-                
-                if(isPlaying){
-//                    timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
-//                        print("current time: ", audioBrownNoise.currentTime)
-//                    }
-                }
+//                let session = AVAudioSession.sharedInstance()
+//                do {
+//                    try session.setCategory(.playAndRecord)
+//                } catch {
+//                    print("Failed to set AVAudioSession category: \(error.localizedDescription)")
+//                }
             }
         }
         .navigationBarHidden(true)

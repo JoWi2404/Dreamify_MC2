@@ -40,6 +40,7 @@
 		DA34047E2A4AE27500C2A12B /* OnboardingView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView3.swift; sourceTree = "<group>"; };
 		DA3404802A4AE2BE00C2A12B /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		DA46888A2A52C417003A3A8C /* Grumpy_Dorian_BG.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Grumpy_Dorian_BG.mp3; sourceTree = "<group>"; };
+		DA4688922A542981003A3A8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FA98FBFA2A4EBF1E0026664A /* Enchanted_Garden_Narator.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Enchanted_Garden_Narator.mp3; path = ../../../../../Downloads/Enchanted_Garden_Narator.mp3; sourceTree = "<group>"; };
 		FA98FBFC2A4EBF290026664A /* Enchanted_Garden_BG.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Enchanted_Garden_BG.mp3; path = ../../../../../Downloads/Enchanted_Garden_BG.mp3; sourceTree = "<group>"; };
 		FA98FBFE2A4EBF310026664A /* Oceanic_Venture_Narator.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Oceanic_Venture_Narator.mp3; path = ../../../../../Downloads/Oceanic_Venture_Narator.mp3; sourceTree = "<group>"; };
@@ -80,6 +81,7 @@
 		65221EA42A42F007001BAFC8 /* Dreamify */ = {
 			isa = PBXGroup;
 			children = (
+				DA4688922A542981003A3A8C /* Info.plist */,
 				DA3404882A4C1B8A00C2A12B /* Audio */,
 				650EBB9C2A496CDE00DA62E2 /* Dreamify.entitlements */,
 				6549E6EC2A443866000560DB /* Model */,
@@ -353,6 +355,7 @@
 				DEVELOPMENT_TEAM = X7UR8BGM9R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Dreamify/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -363,7 +366,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ada.Dreamify;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adamc2.Dreamify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -383,6 +386,7 @@
 				DEVELOPMENT_TEAM = X7UR8BGM9R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Dreamify/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -393,7 +397,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ada.Dreamify;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adamc2.Dreamify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
