@@ -58,7 +58,7 @@ struct DetailView: View {
                     Slider(
                         value: $currentSec,
                         in: 0...brownDuration,
-                        //                        step: 0.001,
+                      
                         onEditingChanged: { editing in
                             isEditingTime = editing
                             if(!isEditingTime){
@@ -92,14 +92,13 @@ struct DetailView: View {
                     
                     
                     HStack{
-                        //                        Spacer()
+                       
                         Button(action:{
                             self.audioNarration.currentTime = TimeInterval(currentSec - 15)
                             self.audioBrownNoise.currentTime = TimeInterval(currentSec - 15)
                             updateTime()
                             
-                            //condition when narration is done (only brown noise is
-                            //playing, but the user rewind it by 15 secs)
+                           
                             if(!narrationIsPlaying && isPlaying){
                                 if(currentSec < audioDuration){
                                     self.audioNarration.play()
@@ -188,7 +187,9 @@ struct DetailView: View {
                 }
                 .onChange(of: speechRecognizer.transcript.lowercased()) { newValue in
                     if newValue.contains("play") {
-                        startPlayback()
+                        if !isPlaying {
+                            startPlayback()
+                        }
                     } else if newValue.contains("stop") {
                         if isPlaying {
                             stopPlayback()
@@ -196,6 +197,7 @@ struct DetailView: View {
                     }
                     speechRecognizer.transcript = ""
                 }
+
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarHidden(true)
                 .padding(15)
@@ -226,11 +228,11 @@ struct DetailView: View {
                     narrationIsPlaying = true
                     timerCounter()
                     speechRecognizer.transcribe()
-                    //                            startRecording()
+                 
                     
                 }
             }
-            //            .background(Color(red:0.19078, green:0.1647, blue:0.27058))
+         
             
             .background(
                 LinearGradient(
