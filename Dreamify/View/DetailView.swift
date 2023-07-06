@@ -167,7 +167,7 @@ struct DetailView: View {
                     Spacer()
                     
                     VStack(spacing: 0){
-                        Text(imageData.caption)
+                        Text("Narrator's Volume")
                             .multilineTextAlignment(.center)
                             .padding(.top)
                             .fontWeight(.bold)
@@ -196,8 +196,13 @@ struct DetailView: View {
                 .onAppear{
                     selectedTitle = self.audioBrownNoise?.url?.lastPathComponent ?? ""
                     if(selectedTitle != imageData.audio+"_BG.mp3"){
-                        print("masuk")
                         let soundBrownNoise = Bundle.main.path(forResource: imageData.audio+"_BG", ofType: "mp3")
+                        do{
+                            try AVAudioSession.sharedInstance().setCategory(.playAndRecord, mode: .spokenAudio, options: [.defaultToSpeaker, .allowAirPlay, .allowBluetoothA2DP])
+//                            try AVAudioSession.sharedInstance().setActive(true)
+                        }catch {
+                            print("Failed to play audio: \(error)")
+                        }
                         self.audioBrownNoise = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: soundBrownNoise!))
                         let soundNarration = Bundle.main.path(forResource: imageData.audio+"_Narator", ofType: "mp3")
                         self.audioNarration = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: soundNarration!))
