@@ -11,11 +11,12 @@ import AVKit
 @main
 struct DreamifyApp: App {
     @AppStorage("isOnboarding") var isOnboarding: Bool = true
-
+ @StateObject private var speechRecognizer = SpeechRecognizer.shared
     var body: some Scene {
         WindowGroup {
             if isOnboarding{
                 OnboardingView()
+                .environmentObject(speechRecognizer)
             }else{
                 Library2View()
             }
