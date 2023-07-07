@@ -11,12 +11,16 @@
 		65221EA62A42F007001BAFC8 /* DreamifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65221EA52A42F007001BAFC8 /* DreamifyApp.swift */; };
 		65221EAA2A42F008001BAFC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65221EA92A42F008001BAFC8 /* Assets.xcassets */; };
 		65221EAD2A42F008001BAFC8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65221EAC2A42F008001BAFC8 /* Preview Assets.xcassets */; };
+		6530B00C2A56CFA5001B32D3 /* ImageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6530B00B2A56CFA5001B32D3 /* ImageDataModel.swift */; };
+		6530B00E2A56D0DF001B32D3 /* OnBoardingContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6530B00D2A56D0DF001B32D3 /* OnBoardingContentModel.swift */; };
+		6530B0112A57E2E7001B32D3 /* SelectStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6530B0102A57E2E7001B32D3 /* SelectStoryView.swift */; };
 		DA3404792A4ADD2400C2A12B /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3404782A4ADD2400C2A12B /* DetailView.swift */; };
 		DA34047B2A4AE22A00C2A12B /* OnboardingView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA34047A2A4AE22A00C2A12B /* OnboardingView1.swift */; };
 		DA34047D2A4AE25100C2A12B /* OnboardingView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA34047C2A4AE25100C2A12B /* OnboardingView2.swift */; };
 		DA34047F2A4AE27500C2A12B /* OnboardingView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA34047E2A4AE27500C2A12B /* OnboardingView3.swift */; };
 		DA3404812A4AE2BE00C2A12B /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3404802A4AE2BE00C2A12B /* CircleView.swift */; };
 		DA46888B2A52C417003A3A8C /* Grumpy_Dorian_BG.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DA46888A2A52C417003A3A8C /* Grumpy_Dorian_BG.mp3 */; };
+		FA27BF432A5414C400713AE9 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA27BF422A5414C400713AE9 /* SpeechRecognizer.swift */; };
 		FA98FBFB2A4EBF1E0026664A /* Enchanted_Garden_Narator.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA98FBFA2A4EBF1E0026664A /* Enchanted_Garden_Narator.mp3 */; };
 		FA98FBFD2A4EBF290026664A /* Enchanted_Garden_BG.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA98FBFC2A4EBF290026664A /* Enchanted_Garden_BG.mp3 */; };
 		FA98FBFF2A4EBF310026664A /* Oceanic_Venture_Narator.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA98FBFE2A4EBF310026664A /* Oceanic_Venture_Narator.mp3 */; };
@@ -24,7 +28,6 @@
 		FA98FC032A4EBF3C0026664A /* Merchant_of_Hearts_Narator.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA98FC022A4EBF3C0026664A /* Merchant_of_Hearts_Narator.mp3 */; };
 		FA98FC052A4EBF400026664A /* Merchant_of_Hearts_BG.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA98FC042A4EBF400026664A /* Merchant_of_Hearts_BG.mp3 */; };
 		FA98FC072A4EBF490026664A /* Grumpy_Dorian_Narator.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA98FC062A4EBF490026664A /* Grumpy_Dorian_Narator.mp3 */; };
-		FAED6FA62A49919600318985 /* Library 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAED6FA52A49919600318985 /* Library 2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		65221EA52A42F007001BAFC8 /* DreamifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamifyApp.swift; sourceTree = "<group>"; };
 		65221EA92A42F008001BAFC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65221EAC2A42F008001BAFC8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6530B00B2A56CFA5001B32D3 /* ImageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataModel.swift; sourceTree = "<group>"; };
+		6530B00D2A56D0DF001B32D3 /* OnBoardingContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingContentModel.swift; sourceTree = "<group>"; };
+		6530B0102A57E2E7001B32D3 /* SelectStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStoryView.swift; sourceTree = "<group>"; };
 		DA3404782A4ADD2400C2A12B /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		DA34047A2A4AE22A00C2A12B /* OnboardingView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView1.swift; sourceTree = "<group>"; };
 		DA34047C2A4AE25100C2A12B /* OnboardingView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView2.swift; sourceTree = "<group>"; };
@@ -41,6 +47,7 @@
 		DA3404802A4AE2BE00C2A12B /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		DA46888A2A52C417003A3A8C /* Grumpy_Dorian_BG.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Grumpy_Dorian_BG.mp3; sourceTree = "<group>"; };
 		DA4688922A542981003A3A8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		FA27BF422A5414C400713AE9 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		FA98FBFA2A4EBF1E0026664A /* Enchanted_Garden_Narator.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Enchanted_Garden_Narator.mp3; path = ../../../../../Downloads/Enchanted_Garden_Narator.mp3; sourceTree = "<group>"; };
 		FA98FBFC2A4EBF290026664A /* Enchanted_Garden_BG.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Enchanted_Garden_BG.mp3; path = ../../../../../Downloads/Enchanted_Garden_BG.mp3; sourceTree = "<group>"; };
 		FA98FBFE2A4EBF310026664A /* Oceanic_Venture_Narator.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Oceanic_Venture_Narator.mp3; path = ../../../../../Downloads/Oceanic_Venture_Narator.mp3; sourceTree = "<group>"; };
@@ -48,7 +55,6 @@
 		FA98FC022A4EBF3C0026664A /* Merchant_of_Hearts_Narator.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Merchant_of_Hearts_Narator.mp3; path = ../../../../../Downloads/Merchant_of_Hearts_Narator.mp3; sourceTree = "<group>"; };
 		FA98FC042A4EBF400026664A /* Merchant_of_Hearts_BG.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Merchant_of_Hearts_BG.mp3; path = ../../../../../Downloads/Merchant_of_Hearts_BG.mp3; sourceTree = "<group>"; };
 		FA98FC062A4EBF490026664A /* Grumpy_Dorian_Narator.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Grumpy_Dorian_Narator.mp3; path = ../../../../../Downloads/Grumpy_Dorian_Narator.mp3; sourceTree = "<group>"; };
-		FAED6FA52A49919600318985 /* Library 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Library 2.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,7 @@
 				650EBB9C2A496CDE00DA62E2 /* Dreamify.entitlements */,
 				6549E6EC2A443866000560DB /* Model */,
 				65221EB32A42F0F6001BAFC8 /* View */,
+				FA27BF422A5414C400713AE9 /* SpeechRecognizer.swift */,
 				65221EA52A42F007001BAFC8 /* DreamifyApp.swift */,
 				65221EA92A42F008001BAFC8 /* Assets.xcassets */,
 				65221EAB2A42F008001BAFC8 /* Preview Content */,
@@ -104,20 +111,30 @@
 		65221EB32A42F0F6001BAFC8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FAED6FA52A49919600318985 /* Library 2.swift */,
+				6530B00F2A56D1C0001B32D3 /* BackUpOnboardingView */,
 				DA3404782A4ADD2400C2A12B /* DetailView.swift */,
+				DA3404802A4AE2BE00C2A12B /* CircleView.swift */,
+				651153BD2A4C3B00004CA243 /* OnboardingView.swift */,
+				6530B0102A57E2E7001B32D3 /* SelectStoryView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6530B00F2A56D1C0001B32D3 /* BackUpOnboardingView */ = {
+			isa = PBXGroup;
+			children = (
 				DA34047A2A4AE22A00C2A12B /* OnboardingView1.swift */,
 				DA34047C2A4AE25100C2A12B /* OnboardingView2.swift */,
 				DA34047E2A4AE27500C2A12B /* OnboardingView3.swift */,
-				DA3404802A4AE2BE00C2A12B /* CircleView.swift */,
-				651153BD2A4C3B00004CA243 /* OnboardingView.swift */,
 			);
-			path = View;
+			path = BackUpOnboardingView;
 			sourceTree = "<group>";
 		};
 		6549E6EC2A443866000560DB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6530B00B2A56CFA5001B32D3 /* ImageDataModel.swift */,
+				6530B00D2A56D0DF001B32D3 /* OnBoardingContentModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -215,11 +232,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6530B0112A57E2E7001B32D3 /* SelectStoryView.swift in Sources */,
 				DA3404812A4AE2BE00C2A12B /* CircleView.swift in Sources */,
+				6530B00C2A56CFA5001B32D3 /* ImageDataModel.swift in Sources */,
+				6530B00E2A56D0DF001B32D3 /* OnBoardingContentModel.swift in Sources */,
 				DA34047F2A4AE27500C2A12B /* OnboardingView3.swift in Sources */,
 				651153BE2A4C3B00004CA243 /* OnboardingView.swift in Sources */,
 				DA3404792A4ADD2400C2A12B /* DetailView.swift in Sources */,
-				FAED6FA62A49919600318985 /* Library 2.swift in Sources */,
+				FA27BF432A5414C400713AE9 /* SpeechRecognizer.swift in Sources */,
 				65221EA62A42F007001BAFC8 /* DreamifyApp.swift in Sources */,
 				DA34047D2A4AE25100C2A12B /* OnboardingView2.swift in Sources */,
 				DA34047B2A4AE22A00C2A12B /* OnboardingView1.swift in Sources */,
@@ -356,6 +376,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Dreamify/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need this again please";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "We need this to sleep";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -387,6 +409,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Dreamify/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need this again please";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "We need this to sleep";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -1,16 +1,15 @@
+//
+//  SelectStoryView.swift
+//  Dreamify
+//
+//  Created by Joey Wiryawan on 07/07/23.
+//
+
 import SwiftUI
 import AVKit
 
-struct ImageData: Identifiable {
-    var id = UUID()
-    let name: String
-    let title: String
-    let audio: String
-    let description: String
-    let caption: String
-}
-
-struct Library2View: View {
+struct SelectStoryView: View {
+    
     @State private var isShowingDetail = false
     @State private var nowPlayingTitle = ""
     @State var isPresentSheet = false
@@ -24,14 +23,8 @@ struct Library2View: View {
     
     @AppStorage("isOnboarding") var isOnboarding: Bool?
 
-
-    let images = [
-        ImageData(name: "Enchanted Garden", title: "Enchanted Garden", audio: "Enchanted_Garden", description: "When we think of a garden, we often imagine a place full of brightly glazed flowers along with the sound of pristine water fountain. Have you actually visited a garden who possess these traits? Even if you haven't, worry not. Cover your eyes and experience it yourself as you fall deep into slumber.", caption: "Rain on Rooftop"),
-        ImageData(name: "Oceanic Venture", title: "Oceanic Venture", audio: "Oceanic_Venture", description: "Whatever lies deep in the ocean will forever remain a mystery. Have you ever wondered what it feels to sail through the magnificent colossus sized of water? Before you fall deeper into your unconscious state, let's have a quick venture, shall we?", caption: "Crashing Waves"),
-        ImageData(name: "Merchant of Hearts", title: "Merchant of Hearts", audio: "Merchant_of_Hearts", description: "Adora was a reputable merchant for her expertise in potions, vials, and spells that could help with all kinds of love troubles. Despite being called the infamous Merchant of Hearts, Adora stumbled into a love problem with Mark, the guy whom she fell in love with. Can her potion brewing and enchantments be able to fix it? ", caption: "Rain & Thunder"),
-        ImageData(name: "Grumpy Dorian", title: "Grumpy Dorian", audio: "Grumpy_Dorian", description: "You spilled on his favorite jacket? Unforgivable! Dorian was merely a little kid with a big temper. Whoever got in his way, they’re deemed unforgivable by this grumpy little kid. Are you one of those people, perhaps?", caption: "Snowfall")
-    ]
-
+    
+    
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading, spacing: 0){
@@ -55,12 +48,12 @@ struct Library2View: View {
                                         audioBrownNoise.pause()
                                         isPlaying = false
                                     }
-//                                    if(isPlaying){
-//
-//                                    }
+                                    //                                    if(isPlaying){
+                                    //
+                                    //                                    }
                                     nowPlayingTitle = image.title
-
-//                                    nowPlayingTitle =
+                                    
+                                    //                                    nowPlayingTitle =
                                 }) {
                                     VStack(spacing: 0) {
                                         Image(image.name)
@@ -111,21 +104,21 @@ struct Library2View: View {
                                                     }
                                                     .padding(.horizontal)
                                                     .padding(.top, 10)
-
+                                                    
                                                     Text(image.description)
                                                         .font(.caption)
                                                         .multilineTextAlignment(.leading)
                                                         .kerning(0.06)
                                                         .foregroundColor(.white)
                                                         .frame(width: 280, alignment: .leading)
-
+                                                    
                                                     Spacer()
-
+                                                    
                                                     HStack {
                                                         Text(image.caption)
                                                             .fontWeight(.semibold)
                                                             .font(.system(size: 11))
-//                                                            .font(Font.custom("SF Pro Text", size: 11).weight(.semibold))
+                                                        //                                                            .font(Font.custom("SF Pro Text", size: 11).weight(.semibold))
                                                             .foregroundColor(Color("darkYellow"))
                                                             .multilineTextAlignment(.center)
                                                             .padding(.horizontal, 10)
@@ -137,7 +130,7 @@ struct Library2View: View {
                                                                     .cornerRadius(10)
                                                             )
                                                         Spacer()
-
+                                                        
                                                         Button(action: {
                                                             // Implement play button action here
                                                         }) {
@@ -145,7 +138,7 @@ struct Library2View: View {
                                                                 Circle()
                                                                     .foregroundColor(Color.gray)
                                                                     .frame(width: 30, height: 30)
-
+                                                                
                                                                 Image(systemName: "play.fill")
                                                                     .foregroundColor(.white)
                                                                     .font(.title3)
@@ -153,8 +146,8 @@ struct Library2View: View {
                                                         }
                                                     }
                                                     .padding(.horizontal)
-
-
+                                                    
+                                                    
                                                     Spacer()
                                                 }
                                             )
@@ -172,7 +165,7 @@ struct Library2View: View {
                                     DetailView(imageData: $selectedStory, audioBrownNoise: $audioBrownNoise, audioNarration: $audioNarration, isPlaying: $isPlaying, currentSec: $currentSec)
                                 }
                             }
-
+                            
                         }
                         .padding(.horizontal)
                     }
@@ -236,12 +229,16 @@ struct Library2View: View {
 //                } catch {
 //                    print("Failed to set AVAudioSession category: \(error.localizedDescription)")
 //                }
+                if(isPlaying){
+                    //                    timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+                    //                        print("current time: ", audioBrownNoise.currentTime)
+                    //                    }
+                }
             }
         }
         .navigationBarHidden(true)
         
     }
-    
 }
 
 //function untuk panggil cornerRadius
@@ -266,6 +263,11 @@ struct RoundedCornerShape: Shape {
     }
 }
 
+struct SelectStoryView_Previews: PreviewProvider {
+    static var previews: some View {
+        SelectStoryView()
+    }
+}
 // BlurView untuk latar belakang blur
 struct BlurView: UIViewRepresentable {
     var style: UIBlurEffect.Style
@@ -289,14 +291,6 @@ struct BlurView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<BlurView>) {}
-}
-
-
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        Library2View()
-    }
 }
 
 // Mengkonversi string hex ke UIColor

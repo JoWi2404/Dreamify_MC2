@@ -11,13 +11,6 @@ import SwiftUI
 struct OnboardingView: View {
     
     @AppStorage("isOnboarding") var isOnboarding: Bool?
-    
-    private let content: [[String]] = [
-        ["Bulan","Welcome to Dreamify!", "Are you ready to fall into a deep slumber?"],
-        ["Onboarding_voice_siri","Voice Recognition","Take control of the story with your voice to avoid direct contact with your phone."],
-        ["Onboarding_focus_mode","Focus State Activation", "It will be automatically turned on when a story gets played to provide comfort for your sleep."]
-    ]
-    
     @State private var pageIndex = 0
     @State private var isOnboardingLocal: Bool = false
     @State private var isSkipped: Bool = false
@@ -27,6 +20,7 @@ struct OnboardingView: View {
             VStack {
                 HStack{
                     Spacer()
+                    //Skip Button
                     Button{
                         isSkipped = true
                         isOnboarding = !isSkipped
@@ -36,7 +30,7 @@ struct OnboardingView: View {
                             .foregroundColor(.white)
                     }
                     .navigationDestination(isPresented: $isSkipped){
-                        Library2View()
+                        SelectStoryView()
                     }
                     .padding(.bottom, 0)
                 }
@@ -96,7 +90,7 @@ struct OnboardingView: View {
                         .foregroundColor(Color("darkPurple"))
                         .cornerRadius(13)
                         .navigationDestination(isPresented: $isOnboardingLocal){
-                            Library2View()
+                            SelectStoryView()
                         }
                 }
                 else {

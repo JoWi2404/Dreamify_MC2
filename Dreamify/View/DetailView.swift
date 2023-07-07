@@ -1,32 +1,27 @@
-//
-//  DetailView.swift
-//  Dreamify
-//
-//  Created by Kelly Florences Tanjaya on 27/06/23.
-//
-
 import SwiftUI
 import AVKit
+import Speech
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         DetailView(imageData: .constant(ImageData(name: "", title: "", audio: "", description: "", caption: "")), audioBrownNoise: .constant(AVAudioPlayer()), audioNarration: .constant(AVAudioPlayer()), isPlaying: .constant(false), currentSec: .constant(0.0))
+            .environmentObject(SpeechRecognizer())
     }
 }
 
 struct DetailView: View {
+    @EnvironmentObject private var speechRecognizer: SpeechRecognizer
+    
     @Binding var imageData: ImageData
     @Binding var audioBrownNoise: AVAudioPlayer!
     @Binding var audioNarration: AVAudioPlayer!
     @Binding var isPlaying: Bool
-    @Binding var currentSec : Float
-
+    @Binding var currentSec: Float
     
-//    @State private var isPlaying: Bool = false
     @State private var playbackProgress: Float = 0.5
     @State private var isLiked: Bool = false
-    @State var audioDuration:Float = 0.0
-    @State var brownDuration:Float = 0.0
+    @State var audioDuration: Float = 0.0
+    @State var brownDuration: Float = 0.0
     @State var volume = 1.0
     @State var isEditing = false
     @State var isEditingTime = false
@@ -36,10 +31,11 @@ struct DetailView: View {
     @State private var timer: Timer? = nil
     @State private var selectedTitle: String = ""
     
+    
     var body: some View {
-       
         NavigationStack {
             VStack{
+//                Text(speechRecognizer.transcript)
                 VStack() {
                     Image(imageData.name)
                         .resizable()
@@ -96,7 +92,7 @@ struct DetailView: View {
                     
                     
                     HStack{
-//                        Spacer()
+                        //                        Spacer()
                         Button(action:{
                             self.audioNarration.currentTime = TimeInterval(currentSec - 15)
                             self.audioBrownNoise.currentTime = TimeInterval(currentSec - 15)
@@ -164,7 +160,7 @@ struct DetailView: View {
                                 .resizable()
                                 .frame(width: 30, height: 30)
                         }.foregroundColor(Color(hex: 0xF7E5B6))
-//                        Spacer()
+                        //                        Spacer()
                     }.padding(.horizontal, 50)
                     
                     Spacer()
@@ -188,17 +184,28 @@ struct DetailView: View {
                         )
                         .padding(0)
                         .accentColor(Color(white: 0.8))
-
+                        
                     }
                     
                     Spacer()
                 }
+                .onChange(of: speechRecognizer.transcript.lowercased()) { newValue in
+                    if newValue.contains("play") {
+                        startPlayback()
+                    } else if newValue.contains("stop") {
+                        if isPlaying {
+                            stopPlayback()
+                        }
+                    }
+                    speechRecognizer.transcript = ""
+                }
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarHidden(true)
                 .padding(15)
-                .onAppear{
+                .onAppear {
                     selectedTitle = self.audioBrownNoise?.url?.lastPathComponent ?? ""
-                    if(selectedTitle != imageData.audio+"_BG.mp3"){
+                    if selectedTitle != imageData.audio+"_BG.mp3" {
+                        print("masuk")
                         let soundBrownNoise = Bundle.main.path(forResource: imageData.audio+"_BG", ofType: "mp3")
                         do{
                             try AVAudioSession.sharedInstance().setCategory(.playAndRecord, mode: .spokenAudio, options: [.defaultToSpeaker, .allowAirPlay, .allowBluetoothA2DP])
@@ -210,30 +217,30 @@ struct DetailView: View {
                         let soundNarration = Bundle.main.path(forResource: imageData.audio+"_Narator", ofType: "mp3")
                         self.audioNarration = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: soundNarration!))
                     }
-
+                    
                     audioDuration = Float(audioNarration?.duration ?? 0)
                     brownDuration = Float(audioBrownNoise?.duration ?? 0)
                     
-                    // this is to compute and show remaining time
-                    let duration = Int((audioNarration?.duration ?? 0) - (audioNarration?.currentTime ?? 0))
-                    let minutes2 = duration/60
-                    let seconds2 = duration - minutes2 * 60
-                    remainingDuration = NSString(format: "%02d:%02d", minutes2,seconds2) as String
+                    let secondAudioMins = Int((audioNarration?.duration ?? 0) - (audioNarration?.currentTime ?? 0)) / 60
+                    let secondAudioSecs = Int((audioNarration?.duration ?? 0) - (audioNarration?.currentTime ?? 0)) % 60
+                    remainingDuration = NSString(format: "%02d:%02d", secondAudioMins, secondAudioSecs) as String
                     
-                    //This is to show and compute current time
-                    let currentTime1 = Int((audioNarration?.currentTime)!)
-                    let minutes = currentTime1/60
-                    let seconds = currentTime1 - minutes * 60
-                    currentDuration = NSString(format: "%02d:%02d", minutes,seconds) as String
+                    let firstAudioMins = Int(audioBrownNoise?.currentTime ?? 0) / 60
+                    let firstAudiosecs = Int(audioBrownNoise?.currentTime ?? 0) % 60
+                    currentDuration = NSString(format: "%02d:%02d", firstAudioMins, firstAudiosecs) as String
                     
                     self.audioBrownNoise.play()
                     self.audioNarration.play()
                     isPlaying = true
                     narrationIsPlaying = true
                     timerCounter()
+                    speechRecognizer.transcribe()
+                    //                            startRecording()
+                    
                 }
             }
-//            .background(Color(red:0.19078, green:0.1647, blue:0.27058))
+            //            .background(Color(red:0.19078, green:0.1647, blue:0.27058))
+            
             .background(
                 LinearGradient(
                     stops: [
@@ -244,11 +251,16 @@ struct DetailView: View {
                     endPoint: UnitPoint(x: 1, y: 1)
                 )
             )
+            
         }
     }
     
-    private func togglePlayback() {
-        isPlaying.toggle()
+    func togglePlayback() {
+        if isPlaying {
+            stopPlayback()
+        } else {
+            startPlayback()
+        }
     }
     
     func updateTime(){
@@ -276,5 +288,22 @@ struct DetailView: View {
             }
         }
     }
+    func startPlayback() {
+        isPlaying = true
+        narrationIsPlaying = true
+        audioBrownNoise.play()
+        audioNarration.play()
+        timerCounter()
+    }
+    
+    func stopPlayback() {
+        isPlaying = false
+        narrationIsPlaying = false
+        audioBrownNoise.pause()
+        audioNarration.pause()
+        if let timer = timer {
+            timer.invalidate()
+        }
+    }
+    
 }
-
