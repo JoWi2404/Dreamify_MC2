@@ -19,7 +19,7 @@ struct DreamifyApp: App {
                 OnboardingView()
                     .environmentObject(speechRecognizer)
             }else{
-                Library2View()
+                SelectStoryView()
                     .environmentObject(speechRecognizer)
             }
         }

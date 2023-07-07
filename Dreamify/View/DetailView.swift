@@ -218,13 +218,13 @@ struct DetailView: View {
                     audioDuration = Float(audioNarration?.duration ?? 0)
                     brownDuration = Float(audioBrownNoise?.duration ?? 0)
                     
-                    let minutes2 = Int((audioNarration?.duration ?? 0) - (audioNarration?.currentTime ?? 0)) / 60
-                    let seconds2 = Int((audioNarration?.duration ?? 0) - (audioNarration?.currentTime ?? 0)) % 60
-                    remainingDuration = NSString(format: "%02d:%02d", minutes2, seconds2) as String
+                    let secondAudioMins = Int((audioNarration?.duration ?? 0) - (audioNarration?.currentTime ?? 0)) / 60
+                    let secondAudioSecs = Int((audioNarration?.duration ?? 0) - (audioNarration?.currentTime ?? 0)) % 60
+                    remainingDuration = NSString(format: "%02d:%02d", secondAudioMins, secondAudioSecs) as String
                     
-                    let minutes = Int(audioBrownNoise?.currentTime ?? 0) / 60
-                    let seconds = Int(audioBrownNoise?.currentTime ?? 0) % 60
-                    currentDuration = NSString(format: "%02d:%02d", minutes, seconds) as String
+                    let firstAudioMins = Int(audioBrownNoise?.currentTime ?? 0) / 60
+                    let firstAudiosecs = Int(audioBrownNoise?.currentTime ?? 0) % 60
+                    currentDuration = NSString(format: "%02d:%02d", firstAudioMins, firstAudiosecs) as String
                     
                     self.audioBrownNoise.play()
                     self.audioNarration.play()

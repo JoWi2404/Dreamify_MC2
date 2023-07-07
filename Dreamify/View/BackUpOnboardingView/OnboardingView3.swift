@@ -61,7 +61,7 @@ struct OnboardingView3: View {
                     }
                     .padding(.bottom, 20)
                     
-                    NavigationLink(destination: Library2View()) {
+                    NavigationLink(destination: SelectStoryView()) {
                         Text("Start")
                             .font(.headline)
                             .foregroundColor(.purple)
