@@ -69,13 +69,31 @@ struct Library2View: View {
                                             .frame(width: 304, height: 356)
                                             .clipped()
                                             .padding(.bottom, 0)
-                                            .cornerRadius(11)
+                                            .cornerRadius(11, corners: [.topLeft, .topRight])
+                                        
+//                                        ZStack(alignment: .bottom) {
+//                                            Image(image.name)
+//                                                .resizable()
+//                                                .aspectRatio(contentMode: .fill)
+//                                                .frame(width: 304, height: 356)
+//                                                .clipped()
+//                                                .padding(.bottom, 0)
+//                                                .cornerRadius(11, corners: [.topLeft, .topRight])
+//
+//                                            LinearGradient(
+//                                                gradient: Gradient(colors: [.clear, .black]),
+//                                                startPoint: .top,
+//                                                endPoint: .bottom
+//                                            )
+//                                            .opacity(0.5)
+//                                        }
 
                                         Rectangle()
                                             .padding(.top, 0)
                                             .foregroundColor(.clear)
                                             .frame(width: 305, height: 220)
-                                            .background(Color(red: 0.15686, green: 0.129412, blue: 0.215686))
+                                            .background(Color(red: 0, green: 0, blue: 0, opacity: 0.2))
+//                                            .background(Color(red: 0.15686, green: 0.129412, blue: 0.215686))
                                             .overlay(
                                                 VStack {
                                                     HStack {
@@ -140,7 +158,7 @@ struct Library2View: View {
                                                     Spacer()
                                                 }
                                             )
-                                            .cornerRadius(11)
+                                            .cornerRadius(11, corners: [.bottomLeft, .bottomRight])
                                     }
                                     .padding(.horizontal, 0)
                                 }
@@ -226,7 +244,27 @@ struct Library2View: View {
     
 }
 
+//function untuk panggil cornerRadius
+extension View {
+    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
+        clipShape(RoundedCornerShape(radius: radius, corners: corners))
+    }
+}
 
+//Untuk custom edges rounded corner
+struct RoundedCornerShape: Shape {
+    let radius: CGFloat
+    let corners: UIRectCorner
+    
+    func path(in rect: CGRect) -> Path {
+        let path = UIBezierPath(
+            roundedRect: rect,
+            byRoundingCorners: corners,
+            cornerRadii: CGSize(width: radius, height: radius)
+        )
+        return Path(path.cgPath)
+    }
+}
 
 // BlurView untuk latar belakang blur
 struct BlurView: UIViewRepresentable {

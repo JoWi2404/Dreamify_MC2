@@ -110,6 +110,9 @@ struct DetailView: View {
                                     self.audioNarration.currentTime = TimeInterval(currentSec - 15)
                                     narrationIsPlaying = true
                                 }
+                                if(currentSec > brownDuration){
+                                    print("done")
+                                }
                             }
                             
                         }){
