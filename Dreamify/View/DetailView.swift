@@ -205,7 +205,6 @@ struct DetailView: View {
                 .onAppear {
                     selectedTitle = self.audioBrownNoise?.url?.lastPathComponent ?? ""
                     if selectedTitle != imageData.audio+"_BG.mp3" {
-                        print("masuk")
                         let soundBrownNoise = Bundle.main.path(forResource: imageData.audio+"_BG", ofType: "mp3")
                         do{
                             try AVAudioSession.sharedInstance().setCategory(.playAndRecord, mode: .spokenAudio, options: [.defaultToSpeaker, .allowAirPlay, .allowBluetoothA2DP])
@@ -221,13 +220,13 @@ struct DetailView: View {
                     audioDuration = Float(audioNarration?.duration ?? 0)
                     brownDuration = Float(audioBrownNoise?.duration ?? 0)
                     
-                    let secondAudioMins = Int((audioNarration?.duration ?? 0) - (audioNarration?.currentTime ?? 0)) / 60
-                    let secondAudioSecs = Int((audioNarration?.duration ?? 0) - (audioNarration?.currentTime ?? 0)) % 60
-                    remainingDuration = NSString(format: "%02d:%02d", secondAudioMins, secondAudioSecs) as String
-                    
-                    let firstAudioMins = Int(audioBrownNoise?.currentTime ?? 0) / 60
-                    let firstAudiosecs = Int(audioBrownNoise?.currentTime ?? 0) % 60
-                    currentDuration = NSString(format: "%02d:%02d", firstAudioMins, firstAudiosecs) as String
+//                    let secondAudioMins = Int((audioNarration?.duration ?? 0) - (audioNarration?.currentTime ?? 0)) / 60
+//                    let secondAudioSecs = Int((audioNarration?.duration ?? 0) - (audioNarration?.currentTime ?? 0)) % 60
+//                    remainingDuration = NSString(format: "%02d:%02d", secondAudioMins, secondAudioSecs) as String
+//                    
+//                    let firstAudioMins = Int(audioBrownNoise?.currentTime ?? 0) / 60
+//                    let firstAudiosecs = Int(audioBrownNoise?.currentTime ?? 0) % 60
+//                    currentDuration = NSString(format: "%02d:%02d", firstAudioMins, firstAudiosecs) as String
                     
                     self.audioBrownNoise.play()
                     self.audioNarration.play()
@@ -235,6 +234,7 @@ struct DetailView: View {
                     narrationIsPlaying = true
                     timerCounter()
                     speechRecognizer.transcribe()
+                    updateTime()
                     //                            startRecording()
                     
                 }

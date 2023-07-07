@@ -40,6 +40,10 @@ struct SelectStoryView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHGrid(rows: [GridItem(.flexible(), spacing: 5)]) {
                             ForEach(images, id: \.name) { image in
+                                
+                                //get each audio's duration
+                                let duration_ = fetchAudioDurations(filename: image.audio+"_BG")
+                                
                                 Button(action: {
                                     selectedStory = image
                                     isPresentSheet.toggle()
@@ -48,12 +52,7 @@ struct SelectStoryView: View {
                                         audioBrownNoise.pause()
                                         isPlaying = false
                                     }
-                                    //                                    if(isPlaying){
-                                    //
-                                    //                                    }
                                     nowPlayingTitle = image.title
-                                    
-                                    //                                    nowPlayingTitle =
                                 }) {
                                     VStack(spacing: 0) {
                                         Image(image.name)
@@ -97,7 +96,7 @@ struct SelectStoryView: View {
                                                             .padding(.bottom, 5)
                                                             .padding(.top, 10)
                                                         Spacer()
-                                                        Text("10:53")
+                                                        Text(duration_)
                                                             .font(Font.custom("SF Pro Text", size: 12).weight(.semibold))
                                                             .multilineTextAlignment(.leading)
                                                             .foregroundColor(.white.opacity(0.5))
@@ -205,7 +204,6 @@ struct SelectStoryView: View {
                 }.padding(.horizontal)
                     .onTapGesture{
                         currentSec = Float((audioBrownNoise?.currentTime)!)
-//                        print("hehe", currentSec)
                         isPresentSheet.toggle()
                     }
                 
@@ -223,21 +221,21 @@ struct SelectStoryView: View {
             )
             .scrollContentBackground(.hidden)
             .onAppear{
-//                let session = AVAudioSession.sharedInstance()
-//                do {
-//                    try session.setCategory(.playAndRecord)
-//                } catch {
-//                    print("Failed to set AVAudioSession category: \(error.localizedDescription)")
-//                }
-                if(isPlaying){
-                    //                    timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
-                    //                        print("current time: ", audioBrownNoise.currentTime)
-                    //                    }
-                }
+                //
             }
         }
         .navigationBarHidden(true)
         
+    }
+    
+    //function to get the duration of an audio
+    func fetchAudioDurations(filename: String) -> String {
+        var sound_ = Bundle.main.path(forResource: filename, ofType: "mp3")
+        var audio_ = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound_!))
+        let mins = Int(audio_.duration ?? 00) / 60
+        let secs = Int(audio_.duration ?? 00) % 60
+        var duration_ = NSString(format: "%02d:%02d", mins, secs) as String
+        return duration_
     }
 }
 
