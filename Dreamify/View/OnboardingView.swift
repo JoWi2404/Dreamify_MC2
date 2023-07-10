@@ -47,9 +47,7 @@ struct OnboardingView: View {
                                 .scaledToFit()
                                 .padding()
                             Text(content[count][1])
-//                                .font(.largeTitle)
                                 .font(.system(size: 42))
-//                                .font(Font.custom("", size: 42).weight(.heavy))
                                 .fontWeight(.heavy)
                                 .foregroundColor(Color("lightYellow"))
                                 .multilineTextAlignment(.center)
@@ -69,10 +67,10 @@ struct OnboardingView: View {
                 .ignoresSafeArea()
                 .tabViewStyle(.page)
                 .indexViewStyle(.page(backgroundDisplayMode: .interactive))
-//                .animation(.easeIn, value: true)
+                .animation(.easeIn, value: true)
 
                 
-                if pageIndex == 2 {
+                if pageIndex == 1 {
                     
 //                    NavigationLink{
 //                        Library2View()
@@ -92,6 +90,7 @@ struct OnboardingView: View {
                         .navigationDestination(isPresented: $isOnboardingLocal){
                             SelectStoryView()
                         }
+                        .animation(.easeInOut, value: true)
                 }
                 else {
                     NavigationLink {
@@ -115,6 +114,8 @@ struct OnboardingView: View {
                     }
                     .hidden()
                     .disabled(true)
+                    .animation(.easeInOut, value: true)
+
                 }
             }
             .background(
