@@ -31,7 +31,7 @@ struct DetailView: View {
     @State private var timer: Timer? = nil
     @State private var selectedTitle: String = ""
     
-    
+
     var body: some View {
         NavigationStack {
             VStack{
@@ -185,17 +185,19 @@ struct DetailView: View {
                     
                     Spacer()
                 }
-                .onChange(of: speechRecognizer.transcript.lowercased()) { newValue in
-                    if newValue.contains("play") {
+                .onChange(of: speechRecognizer.transcript) { _ in
+                    speechRecognizer.stopTranscribing()
+                    if speechRecognizer.transcript.lowercased().contains("play") {
                         if !isPlaying {
                             startPlayback()
                         }
-                    } else if newValue.contains("stop") {
+                    } else if speechRecognizer.transcript.lowercased().contains("stop") {
                         if isPlaying {
                             stopPlayback()
                         }
                     }
-                    speechRecognizer.transcript = ""
+                    speechRecognizer.transcript = ""  //text
+                    speechRecognizer.transcribe()     //fungsinya
                 }
 
                 .navigationBarTitleDisplayMode(.inline)
