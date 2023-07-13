@@ -197,15 +197,20 @@ struct DetailView: View {
                     Spacer()
                 }
                 .onChange(of: speechRecognizer.transcript) { _ in
+                    print("jojo",speechRecognizer.transcript)
                     speechRecognizer.stopTranscribing()
                     if speechRecognizer.transcript.lowercased().contains("play") {
-                        if !isPlaying {
-                            startPlayback()
-                        }
+                        DispatchQueue.main.async {
+                                    if !isPlaying {
+                                        playAudio()
+                                    }
+                                }
                     } else if speechRecognizer.transcript.lowercased().contains("stop") {
-                        if isPlaying {
-                            pauseAudio()
-                        }
+                        DispatchQueue.main.async {
+                                    if isPlaying {
+                                        pauseAudio()
+                                    }
+                                }
                     }
                     speechRecognizer.transcript = ""  //text
                     speechRecognizer.transcribe()     //fungsinya
@@ -260,10 +265,10 @@ struct DetailView: View {
     
     func playAudio() {
         print("play ", isPlaying)
+        isPlaying = true
         playBtn = "pause.fill"
         self.audioBrownNoise.play()
         self.audioNarration.play()
-        isPlaying = true
         narrationIsPlaying = true
         updateNowPlaying(isPause: false)
 //        MPNowPlayingInfoCenter.default().nowPlayingInfo?[MPNowPlayingInfoPropertyPlaybackRate] = 0.0
@@ -280,13 +285,13 @@ struct DetailView: View {
     }
     
     func pauseAudio() {
+        isPlaying = false
         print("pause ", isPlaying)
         playBtn = "play.fill"
         if(narrationIsPlaying){
             self.audioNarration.pause()
         }
         self.audioBrownNoise.pause()
-        isPlaying = false
         updateNowPlaying(isPause: true)
 //        MPNowPlayingInfoCenter.default().nowPlayingInfo?[MPNowPlayingInfoPropertyPlaybackRate] = 1.0
         
@@ -308,7 +313,7 @@ struct DetailView: View {
             if !isPlaying {
                 print("Play command - is playing: \(isPlaying)")
                 playAudio()
-                playBtn = "pause.fill"
+//                playBtn = "pause.fill"
                 return .success
             }
             return .commandFailed
@@ -318,7 +323,7 @@ struct DetailView: View {
             if isPlaying {
                 print("Pause command - is playing: \(isPlaying)")
                 pauseAudio()
-                playBtn = "play.fill"
+//                playBtn = "play.fill"
                 return .success
             }
             return .commandFailed

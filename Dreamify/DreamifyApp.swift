@@ -29,7 +29,7 @@ struct DreamifyApp: App {
 
         let audioSession = AVAudioSession.sharedInstance()
         do {
-            try audioSession.setCategory(AVAudioSession.Category.playback, mode: AVAudioSession.Mode.default)
+            try audioSession.setCategory(AVAudioSession.Category.playAndRecord, mode: AVAudioSession.Mode.default)
         } catch let error as NSError {
             print("Setting category to AVAudioSessionCategoryPlayback failed: \(error)")
         }
