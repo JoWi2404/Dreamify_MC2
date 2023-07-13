@@ -404,22 +404,22 @@ struct DetailView: View {
 //        }
 //    }
     
-//    func startPlayback() {
-//        isPlaying = true
-//        narrationIsPlaying = true
-//        audioBrownNoise.play()
-//        audioNarration.play()
-//        timerCounter()
-//    }
-//
-//    func stopPlayback() {
-//        isPlaying = false
-//        narrationIsPlaying = false
-//        audioBrownNoise.pause()
-//        audioNarration.pause()
-//        if let timer = timer {
-//            timer.invalidate()
-//        }
-//    }
+    func startPlayback() {
+        isPlaying = true
+        narrationIsPlaying = true
+        audioBrownNoise.play()
+        audioNarration.play()
+        timerCounter()
+    }
+
+    func stopPlayback() {
+        isPlaying = false
+        narrationIsPlaying = false
+        audioBrownNoise.pause()
+        audioNarration.pause()
+        if let timer = timer {
+            timer.invalidate()
+        }
+    }
     
 }
