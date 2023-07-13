@@ -197,22 +197,27 @@ struct DetailView: View {
                     Spacer()
                 }
                 .onChange(of: speechRecognizer.transcript) { _ in
-                    print("jojo",speechRecognizer.transcript)
-                    speechRecognizer.stopTranscribing()
-                    if speechRecognizer.transcript.lowercased().contains("play") {
-                        DispatchQueue.main.async {
-                                    if !isPlaying {
-                                        playAudio()
+                    var input = speechRecognizer.transcript.split(separator: " ")
+            
+                    if input.count > 0 {
+                        if input.last!.lowercased() == "play" {
+                            speechRecognizer.stopTranscribing()
+                            DispatchQueue.main.async {
+                                        if !isPlaying {
+                                            playAudio()
+                                        }
                                     }
-                                }
-                    } else if speechRecognizer.transcript.lowercased().contains("stop") {
-                        DispatchQueue.main.async {
-                                    if isPlaying {
-                                        pauseAudio()
+                        } else if input.last!.lowercased() == "stop" {
+                            speechRecognizer.stopTranscribing()
+                            DispatchQueue.main.async {
+                                        if isPlaying {
+                                            pauseAudio()
+                                        }
                                     }
-                                }
+                        }
                     }
-                    speechRecognizer.transcript = ""  //text
+                    
+//                    speechRecognizer.transcript = ""  //text
                     speechRecognizer.transcribe()     //fungsinya
                 }
 
