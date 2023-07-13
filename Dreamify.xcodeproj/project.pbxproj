@@ -15,14 +15,9 @@
 		6530B00E2A56D0DF001B32D3 /* OnBoardingContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6530B00D2A56D0DF001B32D3 /* OnBoardingContentModel.swift */; };
 		6530B0112A57E2E7001B32D3 /* SelectStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6530B0102A57E2E7001B32D3 /* SelectStoryView.swift */; };
 		65E27ABF2A5D6817009ACDB5 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E27ABE2A5D6817009ACDB5 /* Intents.framework */; };
-		65E27AC22A5D6817009ACDB5 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E27AC12A5D6817009ACDB5 /* IntentHandler.swift */; };
 		65E27ACA2A5D6817009ACDB5 /* IntentsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E27AC92A5D6817009ACDB5 /* IntentsUI.framework */; };
-		65E27ACD2A5D6817009ACDB5 /* IntentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E27ACC2A5D6817009ACDB5 /* IntentViewController.swift */; };
-		65E27AD02A5D6817009ACDB5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E27ACE2A5D6817009ACDB5 /* MainInterface.storyboard */; };
 		65E27AD42A5D6817009ACDB5 /* AudioPlayIntentsUI.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 65E27AC82A5D6817009ACDB5 /* AudioPlayIntentsUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		65E27AD72A5D6817009ACDB5 /* AudioPlayIntents.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 65E27ABC2A5D6817009ACDB5 /* AudioPlayIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		65E27AE02A5D6841009ACDB5 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 65E27ADF2A5D6841009ACDB5 /* Intents.intentdefinition */; };
-		65E27AE22A5D6922009ACDB5 /* AudioIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E27AE12A5D6922009ACDB5 /* AudioIntentHandler.swift */; };
 		65E27B012A5EBA06009ACDB5 /* Stellar_Crusade_BG.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65E27AF52A5EBA05009ACDB5 /* Stellar_Crusade_BG.mp3 */; };
 		65E27B022A5EBA06009ACDB5 /* Stellar_Crusade_Narator.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65E27AF62A5EBA05009ACDB5 /* Stellar_Crusade_Narator.mp3 */; };
 		65E27B032A5EBA06009ACDB5 /* Imaginary_Forest_BG.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65E27AF72A5EBA05009ACDB5 /* Imaginary_Forest_BG.mp3 */; };
@@ -87,15 +82,8 @@
 		6530B0102A57E2E7001B32D3 /* SelectStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStoryView.swift; sourceTree = "<group>"; };
 		65E27ABC2A5D6817009ACDB5 /* AudioPlayIntents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AudioPlayIntents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E27ABE2A5D6817009ACDB5 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
-		65E27AC12A5D6817009ACDB5 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
-		65E27AC32A5D6817009ACDB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65E27AC82A5D6817009ACDB5 /* AudioPlayIntentsUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AudioPlayIntentsUI.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E27AC92A5D6817009ACDB5 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
-		65E27ACC2A5D6817009ACDB5 /* IntentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentViewController.swift; sourceTree = "<group>"; };
-		65E27ACF2A5D6817009ACDB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		65E27AD12A5D6817009ACDB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		65E27ADF2A5D6841009ACDB5 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
-		65E27AE12A5D6922009ACDB5 /* AudioIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioIntentHandler.swift; sourceTree = "<group>"; };
 		65E27AF52A5EBA05009ACDB5 /* Stellar_Crusade_BG.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Stellar_Crusade_BG.mp3; path = "../../../../../Downloads/drive-download-20230712T103540Z-001/Stellar_Crusade_BG.mp3"; sourceTree = "<group>"; };
 		65E27AF62A5EBA05009ACDB5 /* Stellar_Crusade_Narator.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Stellar_Crusade_Narator.mp3; path = "../../../../../Downloads/drive-download-20230712T103540Z-001/Stellar_Crusade_Narator.mp3"; sourceTree = "<group>"; };
 		65E27AF72A5EBA05009ACDB5 /* Imaginary_Forest_BG.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Imaginary_Forest_BG.mp3; path = "../../../../../Downloads/drive-download-20230712T103540Z-001/Imaginary_Forest_BG.mp3"; sourceTree = "<group>"; };
@@ -148,8 +136,6 @@
 			isa = PBXGroup;
 			children = (
 				65221EA42A42F007001BAFC8 /* Dreamify */,
-				65E27AC02A5D6817009ACDB5 /* AudioPlayIntents */,
-				65E27ACB2A5D6817009ACDB5 /* AudioPlayIntentsUI */,
 				65E27ABD2A5D6817009ACDB5 /* Frameworks */,
 				65221EA32A42F007001BAFC8 /* Products */,
 			);
@@ -227,27 +213,6 @@
 				65E27AC92A5D6817009ACDB5 /* IntentsUI.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		65E27AC02A5D6817009ACDB5 /* AudioPlayIntents */ = {
-			isa = PBXGroup;
-			children = (
-				65E27AC12A5D6817009ACDB5 /* IntentHandler.swift */,
-				65E27AC32A5D6817009ACDB5 /* Info.plist */,
-				65E27ADF2A5D6841009ACDB5 /* Intents.intentdefinition */,
-				65E27AE12A5D6922009ACDB5 /* AudioIntentHandler.swift */,
-			);
-			path = AudioPlayIntents;
-			sourceTree = "<group>";
-		};
-		65E27ACB2A5D6817009ACDB5 /* AudioPlayIntentsUI */ = {
-			isa = PBXGroup;
-			children = (
-				65E27ACC2A5D6817009ACDB5 /* IntentViewController.swift */,
-				65E27ACE2A5D6817009ACDB5 /* MainInterface.storyboard */,
-				65E27AD12A5D6817009ACDB5 /* Info.plist */,
-			);
-			path = AudioPlayIntentsUI;
 			sourceTree = "<group>";
 		};
 		DA3404882A4C1B8A00C2A12B /* Audio */ = {
@@ -400,7 +365,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65E27AD02A5D6817009ACDB5 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,9 +393,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65E27AE02A5D6841009ACDB5 /* Intents.intentdefinition in Sources */,
-				65E27AC22A5D6817009ACDB5 /* IntentHandler.swift in Sources */,
-				65E27AE22A5D6922009ACDB5 /* AudioIntentHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,7 +400,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65E27ACD2A5D6817009ACDB5 /* IntentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,17 +417,6 @@
 			targetProxy = 65E27AD52A5D6817009ACDB5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		65E27ACE2A5D6817009ACDB5 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				65E27ACF2A5D6817009ACDB5 /* Base */,
-			);
-			name = MainInterface.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		65221EAE2A42F008001BAFC8 /* Debug */ = {
@@ -587,7 +536,6 @@
 		65221EB12A42F008001BAFC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Dreamify/Dreamify.entitlements;
@@ -621,7 +569,6 @@
 		65221EB22A42F008001BAFC8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Dreamify/Dreamify.entitlements;
