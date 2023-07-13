@@ -1,6 +1,8 @@
 import SwiftUI
+import Intents
 import AVKit
 import Speech
+import MediaPlayer
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
@@ -30,12 +32,30 @@ struct DetailView: View {
     @State var narrationIsPlaying = true
     @State private var timer: Timer? = nil
     @State private var selectedTitle: String = ""
+    @State private var playBtn = "pause.fill"
     
     
     var body: some View {
         NavigationStack {
             VStack{
 //                Text(speechRecognizer.transcript)
+                
+//                Button(action: {
+//                    let intent = INPlayMediaIntent()
+//                    intent.suggestedInvocationPhrase = "Play audio in my app"
+//
+//                    let interaction = INInteraction(intent: intent, response: nil)
+//                    interaction.donate { (error) in
+//                        if let error = error {
+//                            print("Failed to donate interaction: \(error.localizedDescription)")
+//                        } else {
+//                            print("Successfully donated interaction")
+//                        }
+//                    }
+//                }) {
+//                    Text("Play Audio")
+//                }
+                
                 VStack() {
                     Image(imageData.name)
                         .resizable()
@@ -69,7 +89,7 @@ struct DetailView: View {
                                 
                                 //condition when narration is done (only brown noise is playing, but the user rewind it from the slider)
                                 if(!narrationIsPlaying && isPlaying){
-                                    if(currentSec < audioDuration){
+                                    if(currentSec <= audioDuration){
                                         self.audioNarration.play()
                                         self.audioNarration.currentTime = TimeInterval(currentSec - 15)
                                         narrationIsPlaying = true
@@ -92,7 +112,6 @@ struct DetailView: View {
                     
                     
                     HStack{
-                        //                        Spacer()
                         Button(action:{
                             self.audioNarration.currentTime = TimeInterval(currentSec - 15)
                             self.audioBrownNoise.currentTime = TimeInterval(currentSec - 15)
@@ -119,37 +138,25 @@ struct DetailView: View {
                         
                         Spacer()
                         
-                        if(isPlaying){
-                            Button(action: {
-                                print("pause")
-                                if(narrationIsPlaying){
-                                    self.audioNarration.pause()
-                                }
-                                self.audioBrownNoise.pause()
-                                isPlaying = false
-                                
-                                timer?.invalidate()
-                            }) {
-                                Image(systemName: "pause.fill").resizable()
+                        Button(action: {
+                            if(isPlaying){
+                                pauseAudio()
+                            }else{
+                                playAudio()
+                            }
+                        }){
+//                            if(isPlaying){
+                                Image(systemName: playBtn).resizable()
                                     .frame(width: 50, height: 50)
                                     .aspectRatio(contentMode: .fit)
-                            }.foregroundColor(Color(hex: 0xF7E5B6))
-                        }else{
-                            Button(action: {
-                                print("play")
-                                self.audioBrownNoise.play()
-                                self.audioNarration.play()
-                                isPlaying = true
-                                narrationIsPlaying = true
-                                
-                                //update timer
-                                timerCounter()
-                            }) {
-                                Image(systemName: "play.fill").resizable()
-                                    .frame(width: 50, height: 50)
-                                    .aspectRatio(contentMode: .fit)
-                            }.foregroundColor(Color(hex: 0xF7E5B6))
-                        }
+//                            }else{
+//                                Image(systemName: "play.fill").resizable()
+//                                    .frame(width: 50, height: 50)
+//                                    .aspectRatio(contentMode: .fit)
+//                            }
+                        }.foregroundColor(Color(hex: 0xF7E5B6))
+                        
+                        
                         Spacer()
                         Button(action:{
                             self.audioNarration.currentTime = TimeInterval(currentSec + 30)
@@ -179,6 +186,7 @@ struct DetailView: View {
                                 isEditing = editing
                                 if(!isEditing){
                                     self.audioNarration.volume = Float(volume)
+                                    print(self.audioNarration.volume)
                                 }
                             }
                         )
@@ -191,10 +199,10 @@ struct DetailView: View {
                 }
                 .onChange(of: speechRecognizer.transcript.lowercased()) { newValue in
                     if newValue.contains("play") {
-                        startPlayback()
+                        playAudio()
                     } else if newValue.contains("stop") {
                         if isPlaying {
-                            stopPlayback()
+                            pauseAudio()
                         }
                     }
                     speechRecognizer.transcript = ""
@@ -203,6 +211,18 @@ struct DetailView: View {
                 .navigationBarHidden(true)
                 .padding(15)
                 .onAppear {
+                    let intent = INPlayMediaIntent()
+                    intent.suggestedInvocationPhrase = "Play audio in Dreamify"
+                    
+                    let interaction = INInteraction(intent: intent, response: nil)
+                    interaction.donate { (error) in
+                        if let error = error {
+                            print("Failed to donate interaction: \(error.localizedDescription)")
+                        } else {
+                            print("Successfully donated interaction")
+                        }
+                    }
+                    
                     selectedTitle = self.audioBrownNoise?.url?.lastPathComponent ?? ""
                     if selectedTitle != imageData.audio+"_BG.mp3" {
                         let soundBrownNoise = Bundle.main.path(forResource: imageData.audio+"_BG", ofType: "mp3")
@@ -220,27 +240,16 @@ struct DetailView: View {
                     audioDuration = Float(audioNarration?.duration ?? 0)
                     brownDuration = Float(audioBrownNoise?.duration ?? 0)
                     
-//                    let secondAudioMins = Int((audioNarration?.duration ?? 0) - (audioNarration?.currentTime ?? 0)) / 60
-//                    let secondAudioSecs = Int((audioNarration?.duration ?? 0) - (audioNarration?.currentTime ?? 0)) % 60
-//                    remainingDuration = NSString(format: "%02d:%02d", secondAudioMins, secondAudioSecs) as String
-//                    
-//                    let firstAudioMins = Int(audioBrownNoise?.currentTime ?? 0) / 60
-//                    let firstAudiosecs = Int(audioBrownNoise?.currentTime ?? 0) % 60
-//                    currentDuration = NSString(format: "%02d:%02d", firstAudioMins, firstAudiosecs) as String
-                    
-                    self.audioBrownNoise.play()
-                    self.audioNarration.play()
-                    isPlaying = true
-                    narrationIsPlaying = true
                     timerCounter()
                     speechRecognizer.transcribe()
+                
+                    //audio control center
+                    setupRemoteTransportControls()
+                    setupNowPlaying()
                     updateTime()
-                    //                            startRecording()
-                    
+                    playAudio()
                 }
             }
-            //            .background(Color(red:0.19078, green:0.1647, blue:0.27058))
-            
             .background(
                 LinearGradient(
                     stops: [
@@ -255,12 +264,104 @@ struct DetailView: View {
         }
     }
     
-    func togglePlayback() {
-        if isPlaying {
-            stopPlayback()
-        } else {
-            startPlayback()
+    func playAudio() {
+        print("play ", isPlaying)
+        playBtn = "pause.fill"
+        self.audioBrownNoise.play()
+        self.audioNarration.play()
+        isPlaying = true
+        narrationIsPlaying = true
+        updateNowPlaying(isPause: false)
+//        MPNowPlayingInfoCenter.default().nowPlayingInfo?[MPNowPlayingInfoPropertyPlaybackRate] = 0.0
+
+        MPRemoteCommandCenter.shared().playCommand.addTarget { event in
+            if isPlaying {
+                print("Play command - is playing: \(isPlaying)")
+                return .success
+            }
+            return .commandFailed
         }
+        //update timer
+        timerCounter()
+    }
+    
+    func pauseAudio() {
+        print("pause ", isPlaying)
+        playBtn = "play.fill"
+        if(narrationIsPlaying){
+            self.audioNarration.pause()
+        }
+        self.audioBrownNoise.pause()
+        isPlaying = false
+        updateNowPlaying(isPause: true)
+//        MPNowPlayingInfoCenter.default().nowPlayingInfo?[MPNowPlayingInfoPropertyPlaybackRate] = 1.0
+        
+        MPRemoteCommandCenter.shared().pauseCommand.addTarget { event in
+            if !isPlaying {
+                print("Pause command - is playing: \(isPlaying)")
+                return .success
+            }
+            return .commandFailed
+        }
+        
+        timer?.invalidate()
+    }
+    
+    func setupRemoteTransportControls() {
+        let commandCenter = MPRemoteCommandCenter.shared()
+        
+        commandCenter.playCommand.addTarget { event in
+            if !isPlaying {
+                print("Play command - is playing: \(isPlaying)")
+                playAudio()
+                playBtn = "pause.fill"
+                return .success
+            }
+            return .commandFailed
+        }
+        
+        commandCenter.pauseCommand.addTarget { event in
+            if isPlaying {
+                print("Pause command - is playing: \(isPlaying)")
+                pauseAudio()
+                playBtn = "play.fill"
+                return .success
+            }
+            return .commandFailed
+        }
+    }
+
+    func setupNowPlaying() {
+        var nowPlayingInfo = [String: Any]()
+        nowPlayingInfo[MPMediaItemPropertyTitle] = imageData.title
+        nowPlayingInfo[MPMediaItemPropertyArtist] = "Dreamify"
+        if let image = UIImage(named: "Enchanted Garden") {
+            nowPlayingInfo[MPMediaItemPropertyArtwork] =
+                MPMediaItemArtwork(boundsSize: image.size) { size in
+                    return image
+            }
+        }
+        nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = audioBrownNoise.currentTime
+        nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = audioBrownNoise.duration
+        nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = isPlaying ? 1.0 : 0.0
+
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
+    }
+
+    func updateNowPlaying(isPause: Bool) {
+        var nowPlayingInfo = MPNowPlayingInfoCenter.default().nowPlayingInfo!
+        nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = audioBrownNoise.currentTime
+        nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = isPause ? 0.0 : 1.0
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
+    }
+
+    
+    func audioPlayerDidFinishPlaying() {
+        print("Audio player did finish playing: ")
+        updateNowPlaying(isPause: true)
+        playBtn = "play.fill"
+//        isPlaying = false
+        print("brown end")
     }
     
     func updateTime(){
@@ -276,7 +377,12 @@ struct DetailView: View {
         let seconds = currentTime1 - minutes * 60
         currentDuration = NSString(format: "%02d:%02d", minutes,seconds) as String
         currentSec = Float((audioBrownNoise?.currentTime)!)
-        //        currentSecDouble = Double((audioNarration?.currentTime)!)
+        
+        print("hehe", currentSec, brownDuration)
+        
+        if(remainingDuration == NSString(format: "%02d:%02d", 0,0) as String){
+            audioPlayerDidFinishPlaying()
+        }
     }
     
     func timerCounter(){
@@ -284,26 +390,41 @@ struct DetailView: View {
             updateTime()
             if (currentSec >= audioDuration) {
                 narrationIsPlaying = false
-                print("end")
             }
+//            if(currentSec >= brownDuration){
+//                playBtn = "play.fill"
+////                self.audioNarration.currentTime = TimeInterval(currentSec + 30)
+////                self.audioBrownNoise.currentTime = TimeInterval(currentSec + 30)
+//                isPlaying = false
+//                print("brown end")
+//            }
         }
-    }
-    func startPlayback() {
-        isPlaying = true
-        narrationIsPlaying = true
-        audioBrownNoise.play()
-        audioNarration.play()
-        timerCounter()
     }
     
-    func stopPlayback() {
-        isPlaying = false
-        narrationIsPlaying = false
-        audioBrownNoise.pause()
-        audioNarration.pause()
-        if let timer = timer {
-            timer.invalidate()
-        }
-    }
+//    func audioDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+//        if flag {
+//            print("Audio playback finished.")
+//        } else {
+//            print("Audio playback did not finish successfully.")
+//        }
+//    }
+    
+//    func startPlayback() {
+//        isPlaying = true
+//        narrationIsPlaying = true
+//        audioBrownNoise.play()
+//        audioNarration.play()
+//        timerCounter()
+//    }
+//
+//    func stopPlayback() {
+//        isPlaying = false
+//        narrationIsPlaying = false
+//        audioBrownNoise.pause()
+//        audioNarration.pause()
+//        if let timer = timer {
+//            timer.invalidate()
+//        }
+//    }
     
 }

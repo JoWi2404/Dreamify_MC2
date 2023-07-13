@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AVKit
+import Intents
 
 struct SelectStoryView: View {
     
@@ -131,7 +132,14 @@ struct SelectStoryView: View {
                                                         Spacer()
                                                         
                                                         Button(action: {
-                                                            // Implement play button action here
+                                                            selectedStory = image
+                                                            isPresentSheet.toggle()
+                                                            if(image.title != nowPlayingTitle && nowPlayingTitle != ""){
+                                                                audioNarration.pause()
+                                                                audioBrownNoise.pause()
+                                                                isPlaying = false
+                                                            }
+                                                            nowPlayingTitle = image.title
                                                         }) {
                                                             ZStack {
                                                                 Circle()
@@ -221,7 +229,13 @@ struct SelectStoryView: View {
             )
             .scrollContentBackground(.hidden)
             .onAppear{
-                //
+                INPreferences.requestSiriAuthorization { (status) in
+                  if status == .authorized {
+                    print("Siri access allowed")
+                  } else {
+                    print("Siri access denied")
+                  }
+                }
             }
         }
         .navigationBarHidden(true)
@@ -230,11 +244,11 @@ struct SelectStoryView: View {
     
     //function to get the duration of an audio
     func fetchAudioDurations(filename: String) -> String {
-        var sound_ = Bundle.main.path(forResource: filename, ofType: "mp3")
-        var audio_ = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound_!))
+        let sound_ = Bundle.main.path(forResource: filename, ofType: "mp3")
+        let audio_ = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound_!))
         let mins = Int(audio_.duration ?? 00) / 60
         let secs = Int(audio_.duration ?? 00) % 60
-        var duration_ = NSString(format: "%02d:%02d", mins, secs) as String
+        let duration_ = NSString(format: "%02d:%02d", mins, secs) as String
         return duration_
     }
 }

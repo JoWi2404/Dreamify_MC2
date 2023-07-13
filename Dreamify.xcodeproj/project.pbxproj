@@ -20,6 +20,10 @@
 		DA34047F2A4AE27500C2A12B /* OnboardingView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA34047E2A4AE27500C2A12B /* OnboardingView3.swift */; };
 		DA3404812A4AE2BE00C2A12B /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3404802A4AE2BE00C2A12B /* CircleView.swift */; };
 		DA46888B2A52C417003A3A8C /* Grumpy_Dorian_BG.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DA46888A2A52C417003A3A8C /* Grumpy_Dorian_BG.mp3 */; };
+		DAEDFE282A5BFAD9005C5A4A /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAEDFE272A5BFAD9005C5A4A /* Intents.framework */; };
+		DAEDFE2B2A5BFAD9005C5A4A /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEDFE2A2A5BFAD9005C5A4A /* IntentHandler.swift */; };
+		DAEDFE2F2A5BFAD9005C5A4A /* SiriExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = DAEDFE252A5BFAD9005C5A4A /* SiriExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DAEDFE482A5D60F4005C5A4A /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = DAEDFE472A5D60F4005C5A4A /* Intents.intentdefinition */; };
 		FA27BF432A5414C400713AE9 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA27BF422A5414C400713AE9 /* SpeechRecognizer.swift */; };
 		FA98FBFB2A4EBF1E0026664A /* Enchanted_Garden_Narator.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA98FBFA2A4EBF1E0026664A /* Enchanted_Garden_Narator.mp3 */; };
 		FA98FBFD2A4EBF290026664A /* Enchanted_Garden_BG.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA98FBFC2A4EBF290026664A /* Enchanted_Garden_BG.mp3 */; };
@@ -29,6 +33,30 @@
 		FA98FC052A4EBF400026664A /* Merchant_of_Hearts_BG.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA98FC042A4EBF400026664A /* Merchant_of_Hearts_BG.mp3 */; };
 		FA98FC072A4EBF490026664A /* Grumpy_Dorian_Narator.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA98FC062A4EBF490026664A /* Grumpy_Dorian_Narator.mp3 */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DAEDFE2D2A5BFAD9005C5A4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65221E9A2A42F007001BAFC8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DAEDFE242A5BFAD9005C5A4A;
+			remoteInfo = SiriExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DAEDFE302A5BFAD9005C5A4A /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DAEDFE2F2A5BFAD9005C5A4A /* SiriExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		650EBB9C2A496CDE00DA62E2 /* Dreamify.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dreamify.entitlements; sourceTree = "<group>"; };
@@ -47,6 +75,12 @@
 		DA3404802A4AE2BE00C2A12B /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		DA46888A2A52C417003A3A8C /* Grumpy_Dorian_BG.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Grumpy_Dorian_BG.mp3; sourceTree = "<group>"; };
 		DA4688922A542981003A3A8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		DAEDFE252A5BFAD9005C5A4A /* SiriExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SiriExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAEDFE272A5BFAD9005C5A4A /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		DAEDFE2A2A5BFAD9005C5A4A /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		DAEDFE2C2A5BFAD9005C5A4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAEDFE342A5BFB19005C5A4A /* SiriExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SiriExtension.entitlements; sourceTree = "<group>"; };
+		DAEDFE472A5D60F4005C5A4A /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
 		FA27BF422A5414C400713AE9 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		FA98FBFA2A4EBF1E0026664A /* Enchanted_Garden_Narator.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Enchanted_Garden_Narator.mp3; path = ../../../../../Downloads/Enchanted_Garden_Narator.mp3; sourceTree = "<group>"; };
 		FA98FBFC2A4EBF290026664A /* Enchanted_Garden_BG.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Enchanted_Garden_BG.mp3; path = ../../../../../Downloads/Enchanted_Garden_BG.mp3; sourceTree = "<group>"; };
@@ -65,6 +99,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DAEDFE222A5BFAD9005C5A4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAEDFE282A5BFAD9005C5A4A /* Intents.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -72,7 +114,9 @@
 			isa = PBXGroup;
 			children = (
 				65221EA42A42F007001BAFC8 /* Dreamify */,
+				DAEDFE262A5BFAD9005C5A4A /* Frameworks */,
 				65221EA32A42F007001BAFC8 /* Products */,
+				DAEDFE292A5BFAD9005C5A4A /* SiriExtension */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				65221EA22A42F007001BAFC8 /* Dreamify.app */,
+				DAEDFE252A5BFAD9005C5A4A /* SiriExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,6 +141,7 @@
 				65221EA52A42F007001BAFC8 /* DreamifyApp.swift */,
 				65221EA92A42F008001BAFC8 /* Assets.xcassets */,
 				65221EAB2A42F008001BAFC8 /* Preview Content */,
+				DAEDFE472A5D60F4005C5A4A /* Intents.intentdefinition */,
 			);
 			path = Dreamify;
 			sourceTree = "<group>";
@@ -154,6 +200,24 @@
 			path = Audio;
 			sourceTree = "<group>";
 		};
+		DAEDFE262A5BFAD9005C5A4A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DAEDFE272A5BFAD9005C5A4A /* Intents.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DAEDFE292A5BFAD9005C5A4A /* SiriExtension */ = {
+			isa = PBXGroup;
+			children = (
+				DAEDFE342A5BFB19005C5A4A /* SiriExtension.entitlements */,
+				DAEDFE2A2A5BFAD9005C5A4A /* IntentHandler.swift */,
+				DAEDFE2C2A5BFAD9005C5A4A /* Info.plist */,
+			);
+			path = SiriExtension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -164,15 +228,34 @@
 				65221E9E2A42F007001BAFC8 /* Sources */,
 				65221E9F2A42F007001BAFC8 /* Frameworks */,
 				65221EA02A42F007001BAFC8 /* Resources */,
+				DAEDFE302A5BFAD9005C5A4A /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DAEDFE2E2A5BFAD9005C5A4A /* PBXTargetDependency */,
 			);
 			name = Dreamify;
 			productName = Dreamify;
 			productReference = 65221EA22A42F007001BAFC8 /* Dreamify.app */;
 			productType = "com.apple.product-type.application";
+		};
+		DAEDFE242A5BFAD9005C5A4A /* SiriExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DAEDFE332A5BFAD9005C5A4A /* Build configuration list for PBXNativeTarget "SiriExtension" */;
+			buildPhases = (
+				DAEDFE212A5BFAD9005C5A4A /* Sources */,
+				DAEDFE222A5BFAD9005C5A4A /* Frameworks */,
+				DAEDFE232A5BFAD9005C5A4A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SiriExtension;
+			productName = SiriExtension;
+			productReference = DAEDFE252A5BFAD9005C5A4A /* SiriExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -186,6 +269,9 @@
 				TargetAttributes = {
 					65221EA12A42F007001BAFC8 = {
 						CreatedOnToolsVersion = 14.3.1;
+					};
+					DAEDFE242A5BFAD9005C5A4A = {
+						CreatedOnToolsVersion = 14.3;
 					};
 				};
 			};
@@ -203,6 +289,7 @@
 			projectRoot = "";
 			targets = (
 				65221EA12A42F007001BAFC8 /* Dreamify */,
+				DAEDFE242A5BFAD9005C5A4A /* SiriExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -225,6 +312,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DAEDFE232A5BFAD9005C5A4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -238,6 +332,7 @@
 				6530B00E2A56D0DF001B32D3 /* OnBoardingContentModel.swift in Sources */,
 				DA34047F2A4AE27500C2A12B /* OnboardingView3.swift in Sources */,
 				651153BE2A4C3B00004CA243 /* OnboardingView.swift in Sources */,
+				DAEDFE482A5D60F4005C5A4A /* Intents.intentdefinition in Sources */,
 				DA3404792A4ADD2400C2A12B /* DetailView.swift in Sources */,
 				FA27BF432A5414C400713AE9 /* SpeechRecognizer.swift in Sources */,
 				65221EA62A42F007001BAFC8 /* DreamifyApp.swift in Sources */,
@@ -246,7 +341,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DAEDFE212A5BFAD9005C5A4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAEDFE2B2A5BFAD9005C5A4A /* IntentHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DAEDFE2E2A5BFAD9005C5A4A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DAEDFE242A5BFAD9005C5A4A /* SiriExtension */;
+			targetProxy = DAEDFE2D2A5BFAD9005C5A4A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		65221EAE2A42F008001BAFC8 /* Debug */ = {
@@ -366,6 +477,7 @@
 		65221EB12A42F008001BAFC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Dreamify/Dreamify.entitlements;
@@ -377,6 +489,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Dreamify/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need this again please";
+				INFOPLIST_KEY_NSSiriUsageDescription = "$(PRODUCT_NAME) would like to access Siri";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "We need this to sleep";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -399,6 +512,7 @@
 		65221EB22A42F008001BAFC8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Dreamify/Dreamify.entitlements;
@@ -410,6 +524,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Dreamify/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need this again please";
+				INFOPLIST_KEY_NSSiriUsageDescription = "$(PRODUCT_NAME) would like to access Siri";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "We need this to sleep";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -423,6 +538,58 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.adamc2.Dreamify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DAEDFE312A5BFAD9005C5A4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SiriExtension/SiriExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X7UR8BGM9R;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SiriExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SiriExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adamc2.Dreamify.SiriExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DAEDFE322A5BFAD9005C5A4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SiriExtension/SiriExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X7UR8BGM9R;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SiriExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SiriExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adamc2.Dreamify.SiriExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -446,6 +613,15 @@
 			buildConfigurations = (
 				65221EB12A42F008001BAFC8 /* Debug */,
 				65221EB22A42F008001BAFC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DAEDFE332A5BFAD9005C5A4A /* Build configuration list for PBXNativeTarget "SiriExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAEDFE312A5BFAD9005C5A4A /* Debug */,
+				DAEDFE322A5BFAD9005C5A4A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
