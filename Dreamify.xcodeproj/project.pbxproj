@@ -14,22 +14,18 @@
 		6530B00C2A56CFA5001B32D3 /* ImageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6530B00B2A56CFA5001B32D3 /* ImageDataModel.swift */; };
 		6530B00E2A56D0DF001B32D3 /* OnBoardingContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6530B00D2A56D0DF001B32D3 /* OnBoardingContentModel.swift */; };
 		6530B0112A57E2E7001B32D3 /* SelectStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6530B0102A57E2E7001B32D3 /* SelectStoryView.swift */; };
-		65E27ABF2A5D6817009ACDB5 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E27ABE2A5D6817009ACDB5 /* Intents.framework */; };
-		65E27ACA2A5D6817009ACDB5 /* IntentsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E27AC92A5D6817009ACDB5 /* IntentsUI.framework */; };
-		65E27AD42A5D6817009ACDB5 /* AudioPlayIntentsUI.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 65E27AC82A5D6817009ACDB5 /* AudioPlayIntentsUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		65E27AD72A5D6817009ACDB5 /* AudioPlayIntents.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 65E27ABC2A5D6817009ACDB5 /* AudioPlayIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		65E27B012A5EBA06009ACDB5 /* Stellar_Crusade_BG.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65E27AF52A5EBA05009ACDB5 /* Stellar_Crusade_BG.mp3 */; };
-		65E27B022A5EBA06009ACDB5 /* Stellar_Crusade_Narator.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65E27AF62A5EBA05009ACDB5 /* Stellar_Crusade_Narator.mp3 */; };
-		65E27B032A5EBA06009ACDB5 /* Imaginary_Forest_BG.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65E27AF72A5EBA05009ACDB5 /* Imaginary_Forest_BG.mp3 */; };
-		65E27B042A5EBA06009ACDB5 /* Merchant_of_Hearts_Narator.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65E27AF82A5EBA05009ACDB5 /* Merchant_of_Hearts_Narator.mp3 */; };
-		65E27B062A5EBA06009ACDB5 /* Oceanic_Venture_BG.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65E27AFA2A5EBA05009ACDB5 /* Oceanic_Venture_BG.mp3 */; };
-		65E27B082A5EBA06009ACDB5 /* Oceanic_Venture_Narator.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65E27AFC2A5EBA05009ACDB5 /* Oceanic_Venture_Narator.mp3 */; };
-		65E27B092A5EBA06009ACDB5 /* Enchanted_Garden_Narator.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65E27AFD2A5EBA06009ACDB5 /* Enchanted_Garden_Narator.mp3 */; };
-		65E27B0A2A5EBA06009ACDB5 /* Merchant_of_Hearts_BG.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65E27AFE2A5EBA06009ACDB5 /* Merchant_of_Hearts_BG.mp3 */; };
-		65E27B0B2A5EBA06009ACDB5 /* Enchanted_Garden_BG.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65E27AFF2A5EBA06009ACDB5 /* Enchanted_Garden_BG.mp3 */; };
-		65E27B0C2A5EBA06009ACDB5 /* Imaginary_Forest_Narator.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65E27B002A5EBA06009ACDB5 /* Imaginary_Forest_Narator.mp3 */; };
-		65E27B0F2A5EBE9B009ACDB5 /* Grumpy_Dorian_BG.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65E27B0D2A5EBE9B009ACDB5 /* Grumpy_Dorian_BG.mp3 */; };
-		65E27B102A5EBE9B009ACDB5 /* Grumpy_Dorian_Narator.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65E27B0E2A5EBE9B009ACDB5 /* Grumpy_Dorian_Narator.mp3 */; };
+		65E27B2B2A5FEC32009ACDB5 /* Enchanted_Garden_Narator.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65E27B292A5FEC32009ACDB5 /* Enchanted_Garden_Narator.mp3 */; };
+		65E27B302A5FEC3E009ACDB5 /* Grumpy_Dorian_Narator.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65E27B2E2A5FEC3E009ACDB5 /* Grumpy_Dorian_Narator.mp3 */; };
+		65E27B372A5FEC4D009ACDB5 /* Merchant_of_Hearts_Narator.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65E27B352A5FEC4D009ACDB5 /* Merchant_of_Hearts_Narator.mp3 */; };
+		65E27B382A5FEC4D009ACDB5 /* Merchant_of_Hearts_BG.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65E27B362A5FEC4D009ACDB5 /* Merchant_of_Hearts_BG.mp3 */; };
+		65E27B3C2A5FEC54009ACDB5 /* Oceanic_Venture_Narator.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65E27B3A2A5FEC54009ACDB5 /* Oceanic_Venture_Narator.mp3 */; };
+		65E27B3F2A5FEC5A009ACDB5 /* Stellar_Crusade_Narator.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65E27B3D2A5FEC5A009ACDB5 /* Stellar_Crusade_Narator.mp3 */; };
+		65E27B442A5FEEA9009ACDB5 /* Imaginary_Forest_Narator.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65E27B432A5FEEA9009ACDB5 /* Imaginary_Forest_Narator.mp3 */; };
+		65E27B4E2A5FFB49009ACDB5 /* Stellar_Crusade_BG.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65E27B4D2A5FFB49009ACDB5 /* Stellar_Crusade_BG.mp3 */; };
+		65E27B522A5FFD49009ACDB5 /* Imaginary_Forest_BG.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65E27B512A5FFD49009ACDB5 /* Imaginary_Forest_BG.mp3 */; };
+		65E27B542A600172009ACDB5 /* Enchanted_Garden_BG.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65E27B532A600172009ACDB5 /* Enchanted_Garden_BG.mp3 */; };
+		65E27B562A600181009ACDB5 /* Grumpy_Dorian_BG.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65E27B552A600181009ACDB5 /* Grumpy_Dorian_BG.mp3 */; };
+		65E27B582A600198009ACDB5 /* Oceanic_Venture_BG.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65E27B572A600198009ACDB5 /* Oceanic_Venture_BG.mp3 */; };
 		DA3404792A4ADD2400C2A12B /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3404782A4ADD2400C2A12B /* DetailView.swift */; };
 		DA34047B2A4AE22A00C2A12B /* OnboardingView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA34047A2A4AE22A00C2A12B /* OnboardingView1.swift */; };
 		DA34047D2A4AE25100C2A12B /* OnboardingView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA34047C2A4AE25100C2A12B /* OnboardingView2.swift */; };
@@ -38,23 +34,6 @@
 		FA27BF432A5414C400713AE9 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA27BF422A5414C400713AE9 /* SpeechRecognizer.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		65E27AD22A5D6817009ACDB5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 65221E9A2A42F007001BAFC8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 65E27AC72A5D6817009ACDB5;
-			remoteInfo = AudioPlayIntentsUI;
-		};
-		65E27AD52A5D6817009ACDB5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 65221E9A2A42F007001BAFC8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 65E27ABB2A5D6817009ACDB5;
-			remoteInfo = AudioPlayIntents;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		65E27AD82A5D6817009ACDB5 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -62,8 +41,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				65E27AD42A5D6817009ACDB5 /* AudioPlayIntentsUI.appex in Embed Foundation Extensions */,
-				65E27AD72A5D6817009ACDB5 /* AudioPlayIntents.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,22 +57,20 @@
 		6530B00B2A56CFA5001B32D3 /* ImageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataModel.swift; sourceTree = "<group>"; };
 		6530B00D2A56D0DF001B32D3 /* OnBoardingContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingContentModel.swift; sourceTree = "<group>"; };
 		6530B0102A57E2E7001B32D3 /* SelectStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStoryView.swift; sourceTree = "<group>"; };
-		65E27ABC2A5D6817009ACDB5 /* AudioPlayIntents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AudioPlayIntents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E27ABE2A5D6817009ACDB5 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
-		65E27AC82A5D6817009ACDB5 /* AudioPlayIntentsUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AudioPlayIntentsUI.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E27AC92A5D6817009ACDB5 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
-		65E27AF52A5EBA05009ACDB5 /* Stellar_Crusade_BG.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Stellar_Crusade_BG.mp3; path = "../../../../../Downloads/drive-download-20230712T103540Z-001/Stellar_Crusade_BG.mp3"; sourceTree = "<group>"; };
-		65E27AF62A5EBA05009ACDB5 /* Stellar_Crusade_Narator.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Stellar_Crusade_Narator.mp3; path = "../../../../../Downloads/drive-download-20230712T103540Z-001/Stellar_Crusade_Narator.mp3"; sourceTree = "<group>"; };
-		65E27AF72A5EBA05009ACDB5 /* Imaginary_Forest_BG.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Imaginary_Forest_BG.mp3; path = "../../../../../Downloads/drive-download-20230712T103540Z-001/Imaginary_Forest_BG.mp3"; sourceTree = "<group>"; };
-		65E27AF82A5EBA05009ACDB5 /* Merchant_of_Hearts_Narator.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Merchant_of_Hearts_Narator.mp3; path = "../../../../../Downloads/drive-download-20230712T103540Z-001/Merchant_of_Hearts_Narator.mp3"; sourceTree = "<group>"; };
-		65E27AFA2A5EBA05009ACDB5 /* Oceanic_Venture_BG.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Oceanic_Venture_BG.mp3; path = "../../../../../Downloads/drive-download-20230712T103540Z-001/Oceanic_Venture_BG.mp3"; sourceTree = "<group>"; };
-		65E27AFC2A5EBA05009ACDB5 /* Oceanic_Venture_Narator.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Oceanic_Venture_Narator.mp3; path = "../../../../../Downloads/drive-download-20230712T103540Z-001/Oceanic_Venture_Narator.mp3"; sourceTree = "<group>"; };
-		65E27AFD2A5EBA06009ACDB5 /* Enchanted_Garden_Narator.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Enchanted_Garden_Narator.mp3; path = "../../../../../Downloads/drive-download-20230712T103540Z-001/Enchanted_Garden_Narator.mp3"; sourceTree = "<group>"; };
-		65E27AFE2A5EBA06009ACDB5 /* Merchant_of_Hearts_BG.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Merchant_of_Hearts_BG.mp3; path = "../../../../../Downloads/drive-download-20230712T103540Z-001/Merchant_of_Hearts_BG.mp3"; sourceTree = "<group>"; };
-		65E27AFF2A5EBA06009ACDB5 /* Enchanted_Garden_BG.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Enchanted_Garden_BG.mp3; path = "../../../../../Downloads/drive-download-20230712T103540Z-001/Enchanted_Garden_BG.mp3"; sourceTree = "<group>"; };
-		65E27B002A5EBA06009ACDB5 /* Imaginary_Forest_Narator.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Imaginary_Forest_Narator.mp3; path = "../../../../../Downloads/drive-download-20230712T103540Z-001/Imaginary_Forest_Narator.mp3"; sourceTree = "<group>"; };
-		65E27B0D2A5EBE9B009ACDB5 /* Grumpy_Dorian_BG.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Grumpy_Dorian_BG.mp3; path = "../../../../../Downloads/drive-download-20230712T105646Z-001/Grumpy_Dorian_BG.mp3"; sourceTree = "<group>"; };
-		65E27B0E2A5EBE9B009ACDB5 /* Grumpy_Dorian_Narator.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Grumpy_Dorian_Narator.mp3; path = "../../../../../Downloads/drive-download-20230712T105646Z-001/Grumpy_Dorian_Narator.mp3"; sourceTree = "<group>"; };
+		65E27B292A5FEC32009ACDB5 /* Enchanted_Garden_Narator.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Enchanted_Garden_Narator.mp3; path = "../../../../../Downloads/Audio Dreamify/Enchanted_Garden_Narator.mp3"; sourceTree = "<group>"; };
+		65E27B2E2A5FEC3E009ACDB5 /* Grumpy_Dorian_Narator.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Grumpy_Dorian_Narator.mp3; path = "../../../../../Downloads/Audio Dreamify/Grumpy_Dorian_Narator.mp3"; sourceTree = "<group>"; };
+		65E27B352A5FEC4D009ACDB5 /* Merchant_of_Hearts_Narator.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Merchant_of_Hearts_Narator.mp3; path = "../../../../../Downloads/Audio Dreamify/Merchant_of_Hearts_Narator.mp3"; sourceTree = "<group>"; };
+		65E27B362A5FEC4D009ACDB5 /* Merchant_of_Hearts_BG.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Merchant_of_Hearts_BG.mp3; path = "../../../../../Downloads/Audio Dreamify/Merchant_of_Hearts_BG.mp3"; sourceTree = "<group>"; };
+		65E27B3A2A5FEC54009ACDB5 /* Oceanic_Venture_Narator.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Oceanic_Venture_Narator.mp3; path = "../../../../../Downloads/Audio Dreamify/Oceanic_Venture_Narator.mp3"; sourceTree = "<group>"; };
+		65E27B3D2A5FEC5A009ACDB5 /* Stellar_Crusade_Narator.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Stellar_Crusade_Narator.mp3; path = "../../../../../Downloads/Audio Dreamify/Stellar_Crusade_Narator.mp3"; sourceTree = "<group>"; };
+		65E27B432A5FEEA9009ACDB5 /* Imaginary_Forest_Narator.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Imaginary_Forest_Narator.mp3; path = ../../../../../Downloads/Imaginary_Forest_Narator.mp3; sourceTree = "<group>"; };
+		65E27B4D2A5FFB49009ACDB5 /* Stellar_Crusade_BG.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Stellar_Crusade_BG.mp3; sourceTree = "<group>"; };
+		65E27B512A5FFD49009ACDB5 /* Imaginary_Forest_BG.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Imaginary_Forest_BG.mp3; sourceTree = "<group>"; };
+		65E27B532A600172009ACDB5 /* Enchanted_Garden_BG.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Enchanted_Garden_BG.mp3; sourceTree = "<group>"; };
+		65E27B552A600181009ACDB5 /* Grumpy_Dorian_BG.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Grumpy_Dorian_BG.mp3; sourceTree = "<group>"; };
+		65E27B572A600198009ACDB5 /* Oceanic_Venture_BG.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Oceanic_Venture_BG.mp3; sourceTree = "<group>"; };
 		DA3404782A4ADD2400C2A12B /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		DA34047A2A4AE22A00C2A12B /* OnboardingView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView1.swift; sourceTree = "<group>"; };
 		DA34047C2A4AE25100C2A12B /* OnboardingView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView2.swift; sourceTree = "<group>"; };
@@ -110,22 +85,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		65E27AB92A5D6817009ACDB5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				65E27ABF2A5D6817009ACDB5 /* Intents.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		65E27AC52A5D6817009ACDB5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				65E27ACA2A5D6817009ACDB5 /* IntentsUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,8 +104,6 @@
 			isa = PBXGroup;
 			children = (
 				65221EA22A42F007001BAFC8 /* Dreamify.app */,
-				65E27ABC2A5D6817009ACDB5 /* AudioPlayIntents.appex */,
-				65E27AC82A5D6817009ACDB5 /* AudioPlayIntentsUI.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -218,18 +175,18 @@
 		DA3404882A4C1B8A00C2A12B /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				65E27AFF2A5EBA06009ACDB5 /* Enchanted_Garden_BG.mp3 */,
-				65E27AFD2A5EBA06009ACDB5 /* Enchanted_Garden_Narator.mp3 */,
-				65E27AF72A5EBA05009ACDB5 /* Imaginary_Forest_BG.mp3 */,
-				65E27B002A5EBA06009ACDB5 /* Imaginary_Forest_Narator.mp3 */,
-				65E27B0D2A5EBE9B009ACDB5 /* Grumpy_Dorian_BG.mp3 */,
-				65E27B0E2A5EBE9B009ACDB5 /* Grumpy_Dorian_Narator.mp3 */,
-				65E27AFE2A5EBA06009ACDB5 /* Merchant_of_Hearts_BG.mp3 */,
-				65E27AF82A5EBA05009ACDB5 /* Merchant_of_Hearts_Narator.mp3 */,
-				65E27AFA2A5EBA05009ACDB5 /* Oceanic_Venture_BG.mp3 */,
-				65E27AFC2A5EBA05009ACDB5 /* Oceanic_Venture_Narator.mp3 */,
-				65E27AF52A5EBA05009ACDB5 /* Stellar_Crusade_BG.mp3 */,
-				65E27AF62A5EBA05009ACDB5 /* Stellar_Crusade_Narator.mp3 */,
+				65E27B532A600172009ACDB5 /* Enchanted_Garden_BG.mp3 */,
+				65E27B292A5FEC32009ACDB5 /* Enchanted_Garden_Narator.mp3 */,
+				65E27B2E2A5FEC3E009ACDB5 /* Grumpy_Dorian_Narator.mp3 */,
+				65E27B552A600181009ACDB5 /* Grumpy_Dorian_BG.mp3 */,
+				65E27B512A5FFD49009ACDB5 /* Imaginary_Forest_BG.mp3 */,
+				65E27B432A5FEEA9009ACDB5 /* Imaginary_Forest_Narator.mp3 */,
+				65E27B362A5FEC4D009ACDB5 /* Merchant_of_Hearts_BG.mp3 */,
+				65E27B352A5FEC4D009ACDB5 /* Merchant_of_Hearts_Narator.mp3 */,
+				65E27B3A2A5FEC54009ACDB5 /* Oceanic_Venture_Narator.mp3 */,
+				65E27B572A600198009ACDB5 /* Oceanic_Venture_BG.mp3 */,
+				65E27B3D2A5FEC5A009ACDB5 /* Stellar_Crusade_Narator.mp3 */,
+				65E27B4D2A5FFB49009ACDB5 /* Stellar_Crusade_BG.mp3 */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -249,47 +206,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				65E27AD32A5D6817009ACDB5 /* PBXTargetDependency */,
-				65E27AD62A5D6817009ACDB5 /* PBXTargetDependency */,
 			);
 			name = Dreamify;
 			productName = Dreamify;
 			productReference = 65221EA22A42F007001BAFC8 /* Dreamify.app */;
 			productType = "com.apple.product-type.application";
-		};
-		65E27ABB2A5D6817009ACDB5 /* AudioPlayIntents */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 65E27ADE2A5D6817009ACDB5 /* Build configuration list for PBXNativeTarget "AudioPlayIntents" */;
-			buildPhases = (
-				65E27AB82A5D6817009ACDB5 /* Sources */,
-				65E27AB92A5D6817009ACDB5 /* Frameworks */,
-				65E27ABA2A5D6817009ACDB5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = AudioPlayIntents;
-			productName = AudioPlayIntents;
-			productReference = 65E27ABC2A5D6817009ACDB5 /* AudioPlayIntents.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
-		65E27AC72A5D6817009ACDB5 /* AudioPlayIntentsUI */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 65E27ADD2A5D6817009ACDB5 /* Build configuration list for PBXNativeTarget "AudioPlayIntentsUI" */;
-			buildPhases = (
-				65E27AC42A5D6817009ACDB5 /* Sources */,
-				65E27AC52A5D6817009ACDB5 /* Frameworks */,
-				65E27AC62A5D6817009ACDB5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = AudioPlayIntentsUI;
-			productName = AudioPlayIntentsUI;
-			productReference = 65E27AC82A5D6817009ACDB5 /* AudioPlayIntentsUI.appex */;
-			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -302,12 +223,6 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					65221EA12A42F007001BAFC8 = {
-						CreatedOnToolsVersion = 14.3.1;
-					};
-					65E27ABB2A5D6817009ACDB5 = {
-						CreatedOnToolsVersion = 14.3.1;
-					};
-					65E27AC72A5D6817009ACDB5 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
 				};
@@ -326,8 +241,6 @@
 			projectRoot = "";
 			targets = (
 				65221EA12A42F007001BAFC8 /* Dreamify */,
-				65E27ABB2A5D6817009ACDB5 /* AudioPlayIntents */,
-				65E27AC72A5D6817009ACDB5 /* AudioPlayIntentsUI */,
 			);
 		};
 /* End PBXProject section */
@@ -337,34 +250,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65E27B092A5EBA06009ACDB5 /* Enchanted_Garden_Narator.mp3 in Resources */,
-				65E27B022A5EBA06009ACDB5 /* Stellar_Crusade_Narator.mp3 in Resources */,
-				65E27B032A5EBA06009ACDB5 /* Imaginary_Forest_BG.mp3 in Resources */,
-				65E27B0A2A5EBA06009ACDB5 /* Merchant_of_Hearts_BG.mp3 in Resources */,
+				65E27B2B2A5FEC32009ACDB5 /* Enchanted_Garden_Narator.mp3 in Resources */,
+				65E27B3C2A5FEC54009ACDB5 /* Oceanic_Venture_Narator.mp3 in Resources */,
+				65E27B582A600198009ACDB5 /* Oceanic_Venture_BG.mp3 in Resources */,
+				65E27B372A5FEC4D009ACDB5 /* Merchant_of_Hearts_Narator.mp3 in Resources */,
+				65E27B542A600172009ACDB5 /* Enchanted_Garden_BG.mp3 in Resources */,
 				65221EAD2A42F008001BAFC8 /* Preview Assets.xcassets in Resources */,
-				65E27B012A5EBA06009ACDB5 /* Stellar_Crusade_BG.mp3 in Resources */,
-				65E27B0C2A5EBA06009ACDB5 /* Imaginary_Forest_Narator.mp3 in Resources */,
-				65E27B082A5EBA06009ACDB5 /* Oceanic_Venture_Narator.mp3 in Resources */,
-				65E27B0F2A5EBE9B009ACDB5 /* Grumpy_Dorian_BG.mp3 in Resources */,
-				65E27B102A5EBE9B009ACDB5 /* Grumpy_Dorian_Narator.mp3 in Resources */,
-				65E27B042A5EBA06009ACDB5 /* Merchant_of_Hearts_Narator.mp3 in Resources */,
-				65E27B062A5EBA06009ACDB5 /* Oceanic_Venture_BG.mp3 in Resources */,
+				65E27B522A5FFD49009ACDB5 /* Imaginary_Forest_BG.mp3 in Resources */,
 				65221EAA2A42F008001BAFC8 /* Assets.xcassets in Resources */,
-				65E27B0B2A5EBA06009ACDB5 /* Enchanted_Garden_BG.mp3 in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		65E27ABA2A5D6817009ACDB5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		65E27AC62A5D6817009ACDB5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				65E27B4E2A5FFB49009ACDB5 /* Stellar_Crusade_BG.mp3 in Resources */,
+				65E27B562A600181009ACDB5 /* Grumpy_Dorian_BG.mp3 in Resources */,
+				65E27B442A5FEEA9009ACDB5 /* Imaginary_Forest_Narator.mp3 in Resources */,
+				65E27B3F2A5FEC5A009ACDB5 /* Stellar_Crusade_Narator.mp3 in Resources */,
+				65E27B302A5FEC3E009ACDB5 /* Grumpy_Dorian_Narator.mp3 in Resources */,
+				65E27B382A5FEC4D009ACDB5 /* Merchant_of_Hearts_BG.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,34 +288,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		65E27AB82A5D6817009ACDB5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		65E27AC42A5D6817009ACDB5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		65E27AD32A5D6817009ACDB5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 65E27AC72A5D6817009ACDB5 /* AudioPlayIntentsUI */;
-			targetProxy = 65E27AD22A5D6817009ACDB5 /* PBXContainerItemProxy */;
-		};
-		65E27AD62A5D6817009ACDB5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 65E27ABB2A5D6817009ACDB5 /* AudioPlayIntents */;
-			targetProxy = 65E27AD52A5D6817009ACDB5 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		65221EAE2A42F008001BAFC8 /* Debug */ = {
@@ -599,106 +471,6 @@
 			};
 			name = Release;
 		};
-		65E27AD92A5D6817009ACDB5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = X7UR8BGM9R;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AudioPlayIntents/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = AudioPlayIntents;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.adamc2.Dreamify.AudioPlayIntents;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		65E27ADA2A5D6817009ACDB5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = X7UR8BGM9R;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AudioPlayIntents/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = AudioPlayIntents;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.adamc2.Dreamify.AudioPlayIntents;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		65E27ADB2A5D6817009ACDB5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = X7UR8BGM9R;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AudioPlayIntentsUI/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = AudioPlayIntentsUI;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.adamc2.Dreamify.AudioPlayIntentsUI;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		65E27ADC2A5D6817009ACDB5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = X7UR8BGM9R;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AudioPlayIntentsUI/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = AudioPlayIntentsUI;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.adamc2.Dreamify.AudioPlayIntentsUI;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -716,24 +488,6 @@
 			buildConfigurations = (
 				65221EB12A42F008001BAFC8 /* Debug */,
 				65221EB22A42F008001BAFC8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		65E27ADD2A5D6817009ACDB5 /* Build configuration list for PBXNativeTarget "AudioPlayIntentsUI" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				65E27ADB2A5D6817009ACDB5 /* Debug */,
-				65E27ADC2A5D6817009ACDB5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		65E27ADE2A5D6817009ACDB5 /* Build configuration list for PBXNativeTarget "AudioPlayIntents" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				65E27AD92A5D6817009ACDB5 /* Debug */,
-				65E27ADA2A5D6817009ACDB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
