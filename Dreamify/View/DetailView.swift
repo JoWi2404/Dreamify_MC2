@@ -38,23 +38,6 @@ struct DetailView: View {
         NavigationStack {
             VStack{
 //                Text(speechRecognizer.transcript)
-                
-//                Button(action: {
-//                    let intent = INPlayMediaIntent()
-//                    intent.suggestedInvocationPhrase = "Play audio in my app"
-//
-//                    let interaction = INInteraction(intent: intent, response: nil)
-//                    interaction.donate { (error) in
-//                        if let error = error {
-//                            print("Failed to donate interaction: \(error.localizedDescription)")
-//                        } else {
-//                            print("Successfully donated interaction")
-//                        }
-//                    }
-//                }) {
-//                    Text("Play Audio")
-//                }
-                
                 VStack() {
                     Image(imageData.name)
                         .resizable()
@@ -77,7 +60,6 @@ struct DetailView: View {
                     Slider(
                         value: $currentSec,
                         in: 0...brownDuration,
-                        //                        step: 0.001,
                         onEditingChanged: { editing in
                             isEditingTime = editing
                             if(!isEditingTime){
