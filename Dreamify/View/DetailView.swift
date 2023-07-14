@@ -33,7 +33,7 @@ struct DetailView: View {
     @State private var selectedTitle: String = ""
     @State private var playBtn = "pause.fill"
     
-    
+
     var body: some View {
         NavigationStack {
             VStack{
@@ -60,6 +60,7 @@ struct DetailView: View {
                     Slider(
                         value: $currentSec,
                         in: 0...brownDuration,
+                      
                         onEditingChanged: { editing in
                             isEditingTime = editing
                             if(!isEditingTime){
@@ -93,13 +94,13 @@ struct DetailView: View {
                     
                     
                     HStack{
+                       
                         Button(action:{
                             self.audioNarration.currentTime = TimeInterval(currentSec - 15)
                             self.audioBrownNoise.currentTime = TimeInterval(currentSec - 15)
                             updateTime()
                             
-                            //condition when narration is done (only brown noise is
-                            //playing, but the user rewind it by 15 secs)
+                           
                             if(!narrationIsPlaying && isPlaying){
                                 if(currentSec < audioDuration){
                                     self.audioNarration.play()
@@ -178,16 +179,31 @@ struct DetailView: View {
                     
                     Spacer()
                 }
-                .onChange(of: speechRecognizer.transcript.lowercased()) { newValue in
-                    if newValue.contains("play") {
-                        playAudio()
-                    } else if newValue.contains("stop") {
-                        if isPlaying {
-                            pauseAudio()
+                .onChange(of: speechRecognizer.transcript) { _ in
+                    var input = speechRecognizer.transcript.split(separator: " ")
+            
+                    if input.count > 0 {
+                        if input.last!.lowercased() == "play" {
+                            speechRecognizer.stopTranscribing()
+                            DispatchQueue.main.async {
+                                        if !isPlaying {
+                                            playAudio()
+                                        }
+                                    }
+                        } else if input.last!.lowercased() == "stop" {
+                            speechRecognizer.stopTranscribing()
+                            DispatchQueue.main.async {
+                                        if isPlaying {
+                                            pauseAudio()
+                                        }
+                                    }
                         }
                     }
-                    speechRecognizer.transcript = ""
+                    
+//                    speechRecognizer.transcript = ""  //text
+                    speechRecognizer.transcribe()     //fungsinya
                 }
+
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarHidden(true)
                 .padding(15)
@@ -219,6 +235,8 @@ struct DetailView: View {
                     playAudio()
                 }
             }
+         
+            
             .background(
                 LinearGradient(
                     stops: [
@@ -235,10 +253,10 @@ struct DetailView: View {
     
     func playAudio() {
         print("play ", isPlaying)
+        isPlaying = true
         playBtn = "pause.fill"
         self.audioBrownNoise.play()
         self.audioNarration.play()
-        isPlaying = true
         narrationIsPlaying = true
         updateNowPlaying(isPause: false)
 //        MPNowPlayingInfoCenter.default().nowPlayingInfo?[MPNowPlayingInfoPropertyPlaybackRate] = 0.0
@@ -255,13 +273,13 @@ struct DetailView: View {
     }
     
     func pauseAudio() {
+        isPlaying = false
         print("pause ", isPlaying)
         playBtn = "play.fill"
         if(narrationIsPlaying){
             self.audioNarration.pause()
         }
         self.audioBrownNoise.pause()
-        isPlaying = false
         updateNowPlaying(isPause: true)
 //        MPNowPlayingInfoCenter.default().nowPlayingInfo?[MPNowPlayingInfoPropertyPlaybackRate] = 1.0
         
@@ -283,7 +301,7 @@ struct DetailView: View {
             if !isPlaying {
                 print("Play command - is playing: \(isPlaying)")
                 playAudio()
-                playBtn = "pause.fill"
+//                playBtn = "pause.fill"
                 return .success
             }
             return .commandFailed
@@ -293,7 +311,7 @@ struct DetailView: View {
             if isPlaying {
                 print("Pause command - is playing: \(isPlaying)")
                 pauseAudio()
-                playBtn = "play.fill"
+//                playBtn = "play.fill"
                 return .success
             }
             return .commandFailed
@@ -379,22 +397,22 @@ struct DetailView: View {
 //        }
 //    }
     
-//    func startPlayback() {
-//        isPlaying = true
-//        narrationIsPlaying = true
-//        audioBrownNoise.play()
-//        audioNarration.play()
-//        timerCounter()
-//    }
-//
-//    func stopPlayback() {
-//        isPlaying = false
-//        narrationIsPlaying = false
-//        audioBrownNoise.pause()
-//        audioNarration.pause()
-//        if let timer = timer {
-//            timer.invalidate()
-//        }
-//    }
+    func startPlayback() {
+        isPlaying = true
+        narrationIsPlaying = true
+        audioBrownNoise.play()
+        audioNarration.play()
+        timerCounter()
+    }
+
+    func stopPlayback() {
+        isPlaying = false
+        narrationIsPlaying = false
+        audioBrownNoise.pause()
+        audioNarration.pause()
+        if let timer = timer {
+            timer.invalidate()
+        }
+    }
     
 }
