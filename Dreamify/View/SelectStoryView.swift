@@ -63,29 +63,13 @@ struct SelectStoryView: View {
                                             .padding(.bottom, 0)
                                             .cornerRadius(11, corners: [.topLeft, .topRight])
                                         
-//                                        ZStack(alignment: .bottom) {
-//                                            Image(image.name)
-//                                                .resizable()
-//                                                .aspectRatio(contentMode: .fill)
-//                                                .frame(width: 304, height: 356)
-//                                                .clipped()
-//                                                .padding(.bottom, 0)
-//                                                .cornerRadius(11, corners: [.topLeft, .topRight])
-//
-//                                            LinearGradient(
-//                                                gradient: Gradient(colors: [.clear, .black]),
-//                                                startPoint: .top,
-//                                                endPoint: .bottom
-//                                            )
-//                                            .opacity(0.5)
-//                                        }
 
                                         Rectangle()
                                             .padding(.top, 0)
                                             .foregroundColor(.clear)
                                             .frame(width: 305, height: 220)
                                             .background(Color(red: 0, green: 0, blue: 0, opacity: 0.2))
-//                                            .background(Color(red: 0.15686, green: 0.129412, blue: 0.215686))
+
                                             .overlay(
                                                 VStack {
                                                     HStack {
@@ -131,7 +115,7 @@ struct SelectStoryView: View {
                                                         Spacer()
                                                         
                                                         Button(action: {
-                                                            // Implement play button action here
+                                                            
                                                         }) {
                                                             ZStack {
                                                                 Circle()
@@ -230,8 +214,8 @@ struct SelectStoryView: View {
     
     //function to get the duration of an audio
     func fetchAudioDurations(filename: String) -> String {
-        var sound_ = Bundle.main.path(forResource: filename, ofType: "mp3")
-        var audio_ = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound_!))
+        var sound_ = Bundle.main.path(forResource: filename, ofType: "mp3")!
+        var audio_ = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound_))
         let mins = Int(audio_.duration ?? 00) / 60
         let secs = Int(audio_.duration ?? 00) % 60
         var duration_ = NSString(format: "%02d:%02d", mins, secs) as String
